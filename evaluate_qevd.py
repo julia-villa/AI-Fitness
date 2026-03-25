@@ -91,6 +91,27 @@ def parse_args():
 # Data loading
 # ---------------------------------------------------------------------------
 
+def _collapse_feedbacks(feedbacks_dense: list) -> list[str]:
+    """
+    Collapse a dense frame-aligned feedback list into ordered unique span strings.
+
+    The raw feedbacks_long_range.json stores feedbacks as a dense list where the
+    same string repeats for every frame it covers, with empty strings between spans.
+    e.g. ["", "", "Good job", "Good job", "", "Keep going", "Keep going", ""]
+    becomes ["Good job", "Keep going"].
+
+    This matches the get_feedback_span logic in the reference fitcoach.py.
+    """
+    result = []
+    prev = None
+    for fb in feedbacks_dense:
+        if fb != prev:
+            if fb:
+                result.append(fb)
+            prev = fb
+    return result
+
+
 def load_results(path: Path) -> list[dict]:
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -104,6 +125,10 @@ def load_ground_truth(path: Path, mode: str) -> dict[str, dict]:
     Returns a dict keyed by video_path.
     Each value: { "feedback": list[str], "timestamps": list[float] (long only),
                   "is_transition": list[bool] (long only) }
+
+    Handles both formats of the feedbacks_long_range.json:
+      - "feedbacks": dense frame-aligned list (reference format) — collapsed automatically
+      - "feedback":  already-collapsed list
     """
     with open(path, "r", encoding="utf-8") as f:
         raw = json.load(f)
@@ -121,9 +146,14 @@ def load_ground_truth(path: Path, mode: str) -> dict[str, dict]:
     else:  # long
         for entry in raw:
             vp = entry.get("long_range_video_file", "")
-            fb = entry.get("feedback", [])
-            if isinstance(fb, str):
+
+            # "feedback" = already collapsed list; "feedbacks" = dense frame-aligned list
+            fb = entry.get("feedback")
+            if fb is None:
+                fb = _collapse_feedbacks(entry.get("feedbacks", []))
+            elif isinstance(fb, str):
                 fb = [fb]
+
             timestamps = entry.get("feedback_timestamps", [])
             is_transition = entry.get("is_transition", [])
             gt[vp] = {
@@ -193,12 +223,21 @@ def _join(strings: list[str]) -> str:
 # METEOR
 # ---------------------------------------------------------------------------
 
-def compute_meteor(aligned: list[dict]) -> dict:
+def compute_meteor(aligned: list[dict], matched_pairs_per_video: dict | None = None) -> dict:
+    """
+    Compute METEOR scores.
+
+    Long mode (matched_pairs_per_video provided):
+        Scores each temporally-matched (gt, pred) pair individually, matching
+        the reference InteractiveFeedbackEvaluator._compute_meteor_scores logic.
+
+    Short mode (matched_pairs_per_video is None):
+        Compares full joined prediction string against all GT references.
+    """
     log.info("Computing METEOR …")
     import nltk
     from nltk.translate.meteor_score import meteor_score as _meteor
 
-    # Ensure WordNet is available
     try:
         nltk.data.find("corpora/wordnet")
     except LookupError:
@@ -213,23 +252,29 @@ def compute_meteor(aligned: list[dict]) -> dict:
     per_video = {}
 
     for entry in tqdm(aligned, desc="METEOR", unit="video"):
-        pred_str = _join(_flatten_list(entry["predicted_feedback"]))
-        refs = _flatten_list(entry["gt_feedback"])
+        vp = entry["video_path"]
 
-        if not pred_str or not refs:
-            per_video[entry["video_path"]] = None
-            continue
-
-        # Score against each reference, take max
-        pred_tokens = pred_str.split()
-        ref_token_lists = [r.split() for r in refs]
-        best = max(_meteor(ref_token_lists, pred_tokens) for _ in [None])
-
-        # meteor_score with multiple references: pass list of token lists
-        best = _meteor(ref_token_lists, pred_tokens)
-
-        scores.append(best)
-        per_video[entry["video_path"]] = round(best, 6)
+        if matched_pairs_per_video is not None:
+            # Long mode: score on temporally matched (gt, pred) pairs
+            pairs = matched_pairs_per_video.get(vp, [])
+            if not pairs:
+                per_video[vp] = None
+                continue
+            pair_scores = [_meteor([gt.split()], pred.split()) for gt, pred in pairs]
+            scores.extend(pair_scores)
+            per_video[vp] = round(float(np.mean(pair_scores)), 6)
+        else:
+            # Short mode: compare full joined strings against all references
+            pred_str = _join(_flatten_list(entry["predicted_feedback"]))
+            refs = _flatten_list(entry["gt_feedback"])
+            if not pred_str or not refs:
+                per_video[vp] = None
+                continue
+            pred_tokens = pred_str.split()
+            ref_token_lists = [r.split() for r in refs]
+            best = _meteor(ref_token_lists, pred_tokens)
+            scores.append(best)
+            per_video[vp] = round(best, 6)
 
     mean = float(np.mean(scores)) if scores else 0.0
     return {"mean": round(mean, 6), "per_video": per_video}
@@ -239,7 +284,15 @@ def compute_meteor(aligned: list[dict]) -> dict:
 # ROUGE-L
 # ---------------------------------------------------------------------------
 
-def compute_rouge(aligned: list[dict]) -> dict:
+def compute_rouge(aligned: list[dict], matched_pairs_per_video: dict | None = None) -> dict:
+    """
+    Compute ROUGE-L scores.
+
+    Long mode: scores each temporally-matched (gt, pred) pair individually,
+    matching the reference _compute_rouge_scores logic.
+
+    Short mode: max F1 across all GT references.
+    """
     log.info("Computing ROUGE-L …")
     from rouge_score import rouge_scorer
 
@@ -248,19 +301,27 @@ def compute_rouge(aligned: list[dict]) -> dict:
     per_video = {}
 
     for entry in tqdm(aligned, desc="ROUGE-L", unit="video"):
-        pred_str = _join(_flatten_list(entry["predicted_feedback"]))
-        refs = _flatten_list(entry["gt_feedback"])
+        vp = entry["video_path"]
 
-        if not pred_str or not refs:
-            per_video[entry["video_path"]] = None
-            continue
-
-        # Take max F1 across all references
-        best_f1 = max(
-            scorer.score(ref, pred_str)["rougeL"].fmeasure for ref in refs
-        )
-        scores.append(best_f1)
-        per_video[entry["video_path"]] = round(best_f1, 6)
+        if matched_pairs_per_video is not None:
+            # Long mode: score on temporally matched (gt, pred) pairs
+            pairs = matched_pairs_per_video.get(vp, [])
+            if not pairs:
+                per_video[vp] = None
+                continue
+            pair_scores = [scorer.score(gt, pred)["rougeL"].fmeasure for gt, pred in pairs]
+            scores.extend(pair_scores)
+            per_video[vp] = round(float(np.mean(pair_scores)), 6)
+        else:
+            # Short mode: max F1 across all references
+            pred_str = _join(_flatten_list(entry["predicted_feedback"]))
+            refs = _flatten_list(entry["gt_feedback"])
+            if not pred_str or not refs:
+                per_video[vp] = None
+                continue
+            best_f1 = max(scorer.score(ref, pred_str)["rougeL"].fmeasure for ref in refs)
+            scores.append(best_f1)
+            per_video[vp] = round(best_f1, 6)
 
     mean = float(np.mean(scores)) if scores else 0.0
     return {"mean_f1": round(mean, 6), "per_video": per_video}
@@ -270,14 +331,79 @@ def compute_rouge(aligned: list[dict]) -> dict:
 # BERTScore
 # ---------------------------------------------------------------------------
 
-def compute_bertscore(aligned: list[dict]) -> dict:
+def compute_bertscore(aligned: list[dict], matched_pairs_per_video: dict | None = None) -> dict:
+    """
+    Compute BERTScore (roberta-large).
+
+    Long mode: scores each temporally-matched (gt, pred) pair, matching the
+    reference _compute_bert_scores logic (batched over all pairs).
+
+    Short mode: max F1 across all GT references per video.
+    """
     log.info("Computing BERTScore (roberta-large) — this may take a while …")
     from bert_score import score as bert_score_fn
 
-    # Build flat lists; for multiple references per video take max F1
+    if matched_pairs_per_video is not None:
+        # Long mode: score on temporally matched (gt, pred) pairs
+        video_paths_flat = []
+        flat_preds = []
+        flat_refs = []
+
+        for entry in aligned:
+            vp = entry["video_path"]
+            for gt, pred in matched_pairs_per_video.get(vp, []):
+                video_paths_flat.append(vp)
+                flat_refs.append(gt)
+                flat_preds.append(pred)
+
+        if not flat_preds:
+            return {"mean_precision": 0.0, "mean_recall": 0.0, "mean_f1": 0.0, "per_video": {}}
+
+        P_flat, R_flat, F1_flat = bert_score_fn(
+            flat_preds,
+            flat_refs,
+            model_type="roberta-large",
+            lang="en",
+            verbose=False,
+            device=None,
+        )
+        P_flat = P_flat.numpy()
+        R_flat = R_flat.numpy()
+        F1_flat = F1_flat.numpy()
+
+        # Group scores by video, take mean over matched pairs
+        per_vid_scores: dict = defaultdict(lambda: {"P": [], "R": [], "F1": []})
+        for i, vp in enumerate(video_paths_flat):
+            per_vid_scores[vp]["P"].append(P_flat[i])
+            per_vid_scores[vp]["R"].append(R_flat[i])
+            per_vid_scores[vp]["F1"].append(F1_flat[i])
+
+        per_video = {}
+        all_P, all_R, all_F1 = [], [], []
+        for entry in aligned:
+            vp = entry["video_path"]
+            if vp not in per_vid_scores:
+                per_video[vp] = None
+                continue
+            p = float(np.mean(per_vid_scores[vp]["P"]))
+            r = float(np.mean(per_vid_scores[vp]["R"]))
+            f = float(np.mean(per_vid_scores[vp]["F1"]))
+            per_video[vp] = {"precision": round(p, 6), "recall": round(r, 6), "f1": round(f, 6)}
+            all_P.append(p)
+            all_R.append(r)
+            all_F1.append(f)
+
+        return {
+            "mean_precision": round(float(np.mean(all_P)) if all_P else 0.0, 6),
+            "mean_recall": round(float(np.mean(all_R)) if all_R else 0.0, 6),
+            "mean_f1": round(float(np.mean(all_F1)) if all_F1 else 0.0, 6),
+            "per_video": per_video,
+        }
+
+    # Short mode: existing multi-reference logic (max F1 per video)
     video_paths = []
     predictions = []
-    references_per_video = []  # list of list[str]
+    references_per_video = []
 
     for entry in aligned:
         pred_str = _join(_flatten_list(entry["predicted_feedback"]))
@@ -291,11 +417,9 @@ def compute_bertscore(aligned: list[dict]) -> dict:
     if not predictions:
         return {"mean_precision": 0.0, "mean_recall": 0.0, "mean_f1": 0.0, "per_video": {}}
 
-    # Compute BERTScore for each (prediction, reference) pair
-    # We flatten: one pred row per (pred, ref) combination, then group back
     flat_preds = []
     flat_refs = []
-    flat_keys = []  # (video_idx, ref_idx)
+    flat_keys = []
 
     for vid_idx, (pred, refs) in enumerate(zip(predictions, references_per_video)):
         for ref_idx, ref in enumerate(refs):
@@ -309,14 +433,13 @@ def compute_bertscore(aligned: list[dict]) -> dict:
         model_type="roberta-large",
         lang="en",
         verbose=False,
-        device=None,  # auto-select GPU/CPU
+        device=None,
     )
 
     P_flat = P_flat.numpy()
     R_flat = R_flat.numpy()
     F1_flat = F1_flat.numpy()
 
-    # Group back: max F1 per video
     per_vid_scores: dict[int, dict] = defaultdict(lambda: {"P": [], "R": [], "F1": []})
     for i, (vid_idx, _) in enumerate(flat_keys):
         per_vid_scores[vid_idx]["P"].append(P_flat[i])
@@ -348,83 +471,164 @@ def compute_bertscore(aligned: list[dict]) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Temporal alignment helpers  (matches reference evaluators.py algorithm)
+# ---------------------------------------------------------------------------
+
+# Matches reference InteractiveFeedbackEvaluator._get_alignment_matrix tolerance=3.0.
+# Effective matching window = ±TEMPORAL_TOLERANCE/2 = ±1.5 seconds.
+TEMPORAL_TOLERANCE = 3.0
+
+
+def _get_alignment_matrix(
+    gt_ts: np.ndarray,
+    pred_ts: np.ndarray,
+    pred_feedbacks: list[str],
+) -> tuple[list[int], list[int]]:
+    """
+    Reference temporal matching from evaluators.py _get_alignment_matrix.
+
+    For each GT timestamp, finds the nearest pred timestamp within
+    TEMPORAL_TOLERANCE/2 seconds. Enforces strictly sequential, non-duplicate
+    matching (each pred slot used at most once, in ascending order).
+    """
+    matching_row_idxs: list[int] = []
+    matching_col_idxs: list[int] = []
+    last_match_idx = -1
+
+    for idx_x, x in enumerate(gt_ts):
+        min_idx = int(np.argmin((pred_ts - x) ** 2))
+        if (
+            abs(x - pred_ts[min_idx]) < (TEMPORAL_TOLERANCE / 2.0)
+            and min_idx > last_match_idx
+            and min_idx not in matching_col_idxs
+            and pred_feedbacks[min_idx] != ""
+        ):
+            matching_row_idxs.append(idx_x)
+            matching_col_idxs.append(min_idx)
+            last_match_idx = min_idx
+
+    return matching_row_idxs, matching_col_idxs
+
+
+def _get_temporally_aligned_feedbacks(
+    gt_ts: list[float],
+    pred_ts: list[float],
+    gt_feedbacks: list[str],
+    pred_feedbacks: list[str],
+) -> tuple[int, int, list[tuple[str, str]]]:
+    """
+    Returns (n_matched_gt, n_matched_pred, matched_pairs).
+
+    matched_pairs is a list of (gt_str, pred_str) used for text metric computation.
+    Matches the reference _get_temporally_aligned_feedbacks signature.
+    """
+    gt_arr = np.array(gt_ts, dtype=float)
+    pred_arr = np.array(pred_ts, dtype=float)
+
+    matched_pairs: list[tuple[str, str]] = []
+    matched_idxs_gt: list[int] = []
+    matched_idxs_pred: list[int] = []
+
+    if len(pred_arr) > 0 and len(gt_arr) > 0:
+        row_idxs, col_idxs = _get_alignment_matrix(gt_arr, pred_arr, pred_feedbacks)
+        for r, c in zip(row_idxs, col_idxs):
+            matched_pairs.append((gt_feedbacks[r], pred_feedbacks[c]))
+            matched_idxs_gt.append(r)
+            matched_idxs_pred.append(c)
+
+    return len(matched_idxs_gt), len(matched_idxs_pred), matched_pairs
+
+
+# ---------------------------------------------------------------------------
 # T-F Score (Temporal-Feedback Score) — long mode only
 # ---------------------------------------------------------------------------
 
-TEMPORAL_TOLERANCE_SEC = 2.0
-
-
-def compute_tf_score(aligned: list[dict]) -> dict:
+def compute_tf_score(
+    aligned: list[dict],
+) -> tuple[dict, dict[str, list[tuple[str, str]]]]:
     """
-    For each predicted feedback item, check if a ground truth feedback
-    exists within ±TEMPORAL_TOLERANCE_SEC of the predicted timestamp.
-    Reports precision, recall, F1 across all videos.
+    Bidirectional temporal-feedback score matching the reference evaluator.
+
+    GT→pred direction  → recall  + matched (gt, pred) pairs for text metrics
+    pred→GT direction  → precision
+
+    Returns:
+        metrics_dict: global + per-video T-F precision, recall, F1.
+        matched_pairs_per_video: video_path -> [(gt_str, pred_str), ...] from
+            GT→pred direction, passed directly to compute_meteor/rouge/bertscore.
     """
     log.info("Computing T-F Score (temporal-feedback) …")
 
-    total_tp = 0
-    total_pred = 0
+    total_matched_gt = 0
+    total_matched_pred = 0
     total_gt = 0
+    total_pred = 0
     per_video = {}
+    matched_pairs_per_video: dict[str, list[tuple[str, str]]] = {}
 
     for entry in aligned:
-        pred_ts = entry.get("predicted_timestamps", [])
-        gt_ts = entry.get("gt_timestamps", [])
+        pred_ts = entry.get("predicted_timestamps") or []
+        gt_ts = entry.get("gt_timestamps") or []
+        pred_fb = _flatten_list(entry["predicted_feedback"])
+        gt_fb = _flatten_list(entry["gt_feedback"])
 
         if not isinstance(pred_ts, list):
             pred_ts = []
         if not isinstance(gt_ts, list):
             gt_ts = []
 
-        n_pred = len(pred_ts)
         n_gt = len(gt_ts)
-        total_pred += n_pred
+        n_pred = len(pred_ts)
         total_gt += n_gt
+        total_pred += n_pred
 
-        # Greedy matching: each GT timestamp can only match one prediction
-        gt_matched = [False] * n_gt
-        tp = 0
+        # GT→pred: recall count + matched pairs for text metrics
+        n_matched_gt, _, matched_pairs = _get_temporally_aligned_feedbacks(
+            gt_ts, pred_ts, gt_fb, pred_fb
+        )
+        # pred→GT: precision count
+        _, n_matched_pred, _ = _get_temporally_aligned_feedbacks(
+            pred_ts, gt_ts, pred_fb, gt_fb
+        )
 
-        for pt in pred_ts:
-            for j, gtt in enumerate(gt_ts):
-                if not gt_matched[j] and abs(pt - gtt) <= TEMPORAL_TOLERANCE_SEC:
-                    tp += 1
-                    gt_matched[j] = True
-                    break
+        total_matched_gt += n_matched_gt
+        total_matched_pred += n_matched_pred
 
-        total_tp += tp
-
-        prec = tp / n_pred if n_pred > 0 else 0.0
-        rec = tp / n_gt if n_gt > 0 else 0.0
+        prec = n_matched_pred / n_pred if n_pred > 0 else 0.0
+        rec = n_matched_gt / n_gt if n_gt > 0 else 0.0
         f1 = (2 * prec * rec / (prec + rec)) if (prec + rec) > 0 else 0.0
 
         per_video[entry["video_path"]] = {
             "precision": round(prec, 6),
             "recall": round(rec, 6),
             "f1": round(f1, 6),
-            "tp": tp,
+            "matched_gt": n_matched_gt,
+            "matched_pred": n_matched_pred,
             "n_pred": n_pred,
             "n_gt": n_gt,
         }
+        matched_pairs_per_video[entry["video_path"]] = matched_pairs
 
-    global_prec = total_tp / total_pred if total_pred > 0 else 0.0
-    global_rec = total_tp / total_gt if total_gt > 0 else 0.0
+    global_prec = total_matched_pred / total_pred if total_pred > 0 else 0.0
+    global_rec = total_matched_gt / total_gt if total_gt > 0 else 0.0
     global_f1 = (
         2 * global_prec * global_rec / (global_prec + global_rec)
         if (global_prec + global_rec) > 0
         else 0.0
     )
 
-    return {
+    metrics = {
         "precision": round(global_prec, 6),
         "recall": round(global_rec, 6),
         "f1": round(global_f1, 6),
-        "total_tp": total_tp,
+        "total_matched_gt": total_matched_gt,
+        "total_matched_pred": total_matched_pred,
         "total_pred": total_pred,
         "total_gt": total_gt,
-        "tolerance_sec": TEMPORAL_TOLERANCE_SEC,
+        "tolerance_sec": TEMPORAL_TOLERANCE / 2.0,
         "per_video": per_video,
     }
+    return metrics, matched_pairs_per_video
 
 
 # ---------------------------------------------------------------------------
@@ -512,7 +716,6 @@ def print_report(
     def table(headers: list[str], rows: list[list]) -> str:
         if use_tabulate:
             return tabulate(rows, headers=headers, tablefmt="rounded_outline")
-        # Fallback plain text
         col_widths = [max(len(str(h)), max((len(str(r[i])) for r in rows), default=0))
                       for i, h in enumerate(headers)]
         sep = "  ".join("-" * w for w in col_widths)
@@ -535,11 +738,11 @@ def print_report(
     # ---- Text quality metrics ----
     print("\n[Text Quality Metrics]")
     rows = [
-        ["METEOR",    _fmt(meteor["mean"]),         "—",              "—",              "—"],
-        ["ROUGE-L F1",_fmt(rouge["mean_f1"]),        "—",              "—",              "—"],
-        ["BERTScore P",_fmt(bert["mean_precision"]), "—",              "—",              "—"],
-        ["BERTScore R",_fmt(bert["mean_recall"]),    "—",              "—",              "—"],
-        ["BERTScore F1",_fmt(bert["mean_f1"]),       "—",              "—",              "—"],
+        ["METEOR",      _fmt(meteor["mean"]),         "—", "—", "—"],
+        ["ROUGE-L F1",  _fmt(rouge["mean_f1"]),        "—", "—", "—"],
+        ["BERTScore P", _fmt(bert["mean_precision"]),  "—", "—", "—"],
+        ["BERTScore R", _fmt(bert["mean_recall"]),     "—", "—", "—"],
+        ["BERTScore F1",_fmt(bert["mean_f1"]),         "—", "—", "—"],
     ]
     print(table(["Metric", "Mean", "P50", "P95", "P99"], rows))
 
@@ -550,8 +753,10 @@ def print_report(
             ["Precision", _fmt(tf["precision"])],
             ["Recall",    _fmt(tf["recall"])],
             ["F1",        _fmt(tf["f1"])],
-            ["TP / Pred / GT",
-             f"{tf['total_tp']} / {tf['total_pred']} / {tf['total_gt']}"],
+            ["Matched GT / Pred",
+             f"{tf['total_matched_gt']} / {tf['total_matched_pred']}"],
+            ["Total GT / Pred",
+             f"{tf['total_gt']} / {tf['total_pred']}"],
             ["Tolerance", f"±{tf['tolerance_sec']}s"],
         ]
         print(table(["Metric", "Value"], rows))
@@ -566,13 +771,11 @@ def print_report(
 
     tok_info = perf.get("total_tokens_used", {})
     rows = [
-        perf_row("TTFT (ms)",      "time_to_first_token_ms"),
-        perf_row("TTLT (ms)",      "time_to_last_token_ms"),
-        perf_row("Tokens/sec",     "tokens_per_second"),
-        ["Total tokens",
-         _fmt(tok_info.get("total")), "—", "—", "—"],
-        ["Tokens/video (mean)",
-         _fmt(tok_info.get("mean")), "—", "—", "—"],
+        perf_row("TTFT (ms)",           "time_to_first_token_ms"),
+        perf_row("TTLT (ms)",           "time_to_last_token_ms"),
+        perf_row("Tokens/sec",          "tokens_per_second"),
+        ["Total tokens",        _fmt(tok_info.get("total")), "—", "—", "—"],
+        ["Tokens/video (mean)", _fmt(tok_info.get("mean")),  "—", "—", "—"],
     ]
     print(table(["Metric", "Mean", "P50", "P95", "P99"], rows))
     print(
@@ -696,11 +899,21 @@ def main():
         log.error("No aligned videos to evaluate. Check that video_path values match between results and ground truth.")
         sys.exit(1)
 
-    # Metrics
-    meteor = compute_meteor(aligned)
-    rouge = compute_rouge(aligned)
-    bert = compute_bertscore(aligned)
-    tf = compute_tf_score(aligned) if args.mode == "long" else None
+    # In long mode, compute temporal alignment first.
+    # matched_pairs_per_video feeds directly into the text metric functions so
+    # METEOR/ROUGE/BERTScore are computed on temporally-matched pairs only,
+    # matching the reference InteractiveFeedbackEvaluator behaviour.
+    matched_pairs_per_video = None
+    tf = None
+    if args.mode == "long":
+        tf, matched_pairs_per_video = compute_tf_score(aligned)
+
+    # Text metrics
+    meteor = compute_meteor(aligned, matched_pairs_per_video)
+    rouge = compute_rouge(aligned, matched_pairs_per_video)
+    bert = compute_bertscore(aligned, matched_pairs_per_video)
+
+    # Inference performance
     perf = compute_performance_metrics(aligned)
 
     # Output
@@ -729,7 +942,6 @@ def main():
         gt_path=args.ground_truth_file,
     )
 
-    # Coverage summary
     n_pred = len(results)
     n_gt = len(gt)
     n_matched = len(aligned)

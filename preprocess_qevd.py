@@ -146,6 +146,22 @@ def load_benchmark_dataset():
 # PART B — Load training split from raw files
 # ---------------------------------------------------------------------------
 
+def _collapse_feedbacks(feedbacks_dense: list) -> list[str]:
+    """
+    Collapse a dense frame-aligned feedback list into ordered unique span strings.
+    e.g. ["", "", "Good job", "Good job", "", "Keep going", ""] -> ["Good job", "Keep going"]
+    Matches the get_feedback_span logic in the reference fitcoach.py.
+    """
+    result = []
+    prev = None
+    for fb in feedbacks_dense:
+        if fb != prev:
+            if fb:
+                result.append(fb)
+            prev = fb
+    return result
+
+
 def _safe_load_json(path: Path) -> list | dict:
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -276,9 +292,17 @@ def load_train_dataset(dataset_root: Path, split_filter: str):
         if not video_path.exists():
             video_path = Path(video_file)
 
-        feedback = entry.get("feedback", [])
-        if isinstance(feedback, str):
-            feedback = [feedback]
+        # feedbacks_long_range.json stores a dense frame-aligned list under "feedbacks"
+        # (plural). Collapse it into unique span strings. Fall back to "feedback"
+        # (singular, already collapsed) if present.
+        feedback_raw = entry.get("feedback")
+        if feedback_raw is None:
+            feedback_dense = entry.get("feedbacks", [])
+            feedback = _collapse_feedbacks(feedback_dense) if feedback_dense else []
+        elif isinstance(feedback_raw, str):
+            feedback = [feedback_raw]
+        else:
+            feedback = feedback_raw
         feedback_timestamps = entry.get("feedback_timestamps", [])
         is_transition = entry.get("is_transition", [])
 
