@@ -147,17 +147,21 @@ Everything else — looping over videos, saving the JSON, injecting device info 
 ```bash
 python predict_mymodel.py \
   --ground_truth_file /path/to/feedbacks_long_range.json \
-  --output_file results/my_model_long.json \
+  --model_name "my-model" \
   --mode long
 ```
+Output saved automatically to `results/my-model.json`.
 
 **Short clips:**
 ```bash
 python predict_mymodel.py \
   --ground_truth_file /path/to/combined/feedbacks_short_clips.json \
-  --output_file results/my_model_short.json \
+  --model_name "my-model" \
   --mode short
 ```
+Output saved automatically to `results/my-model.json`.
+
+> Override the output path with `--output_file results/custom_name.json` if needed.
 
 ---
 
@@ -193,9 +197,9 @@ python evaluate_qevd.py \
 ### Comparing multiple models
 Run each model through predict + evaluate with a different `--model_name` and `--output_dir`:
 ```bash
-python evaluate_qevd.py --results_file results/gemini.json  --model_name "gemini-2.0-flash"  --output_dir eval_output/gemini  ...
-python evaluate_qevd.py --results_file results/gpt4v.json   --model_name "gpt-4v"            --output_dir eval_output/gpt4v   ...
-python evaluate_qevd.py --results_file results/baseline.json --model_name "baseline"          --output_dir eval_output/baseline ...
+python evaluate_qevd.py --results_file results/gemini-2.0-flash.json  --model_name "gemini-2.0-flash"  --output_dir eval_output/gemini-2.0-flash  ...
+python evaluate_qevd.py --results_file results/gpt-4v.json            --model_name "gpt-4v"            --output_dir eval_output/gpt-4v            ...
+python evaluate_qevd.py --results_file results/baseline.json          --model_name "baseline"          --output_dir eval_output/baseline          ...
 ```
 
 ---

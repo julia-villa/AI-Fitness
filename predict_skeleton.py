@@ -25,6 +25,7 @@ import argparse
 import json
 import platform
 import time
+
 from pathlib import Path
 
 
@@ -144,9 +145,17 @@ def run_predictions(video_paths: list[str], mode: str) -> list[dict]:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--ground_truth_file", type=Path, required=True)
-    parser.add_argument("--output_file", type=Path, required=True)
+    parser.add_argument("--model_name", type=str, required=True,
+                        help="Name of your model (e.g. 'gemini-2.0-flash'). Used to name the output file.")
+    parser.add_argument("--output_file", type=Path, default=None,
+                        help="Override output path. Defaults to results/{model_name}.json")
     parser.add_argument("--mode", choices=["short", "long"], default="short")
     args = parser.parse_args()
+
+    # Auto-name output file from model name if not explicitly set
+    if args.output_file is None:
+        safe_name = args.model_name.replace("/", "-").replace(" ", "-")
+        args.output_file = Path("results") / f"{safe_name}.json"
 
     video_paths = load_video_paths(args.ground_truth_file, args.mode)
     print(f"Found {len(video_paths)} videos in ground truth ({args.mode} mode)")
