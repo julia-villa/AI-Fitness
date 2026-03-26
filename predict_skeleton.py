@@ -23,8 +23,34 @@ Usage:
 
 import argparse
 import json
+import platform
 import time
 from pathlib import Path
+
+
+def _get_device_info() -> dict:
+    """Collect hardware/platform info for reproducibility tracking."""
+    info = {
+        "platform": platform.system(),
+        "platform_version": platform.version(),
+        "python_version": platform.python_version(),
+        "device": "CPU",
+    }
+    try:
+        import torch
+        if torch.cuda.is_available():
+            info["device"] = "GPU"
+            info["gpu_name"] = torch.cuda.get_device_name(0)
+            info["gpu_count"] = torch.cuda.device_count()
+            info["gpu_memory_gb"] = round(
+                torch.cuda.get_device_properties(0).total_memory / 1e9, 2
+            )
+        elif torch.backends.mps.is_available():
+            info["device"] = "MPS"
+            info["gpu_name"] = "Apple Silicon"
+    except ImportError:
+        pass
+    return info
 
 
 # ===========================================================================
@@ -125,7 +151,14 @@ def main():
     video_paths = load_video_paths(args.ground_truth_file, args.mode)
     print(f"Found {len(video_paths)} videos in ground truth ({args.mode} mode)")
 
+    device_info = _get_device_info()
+    print(f"Device: {device_info.get('device')} — {device_info.get('gpu_name', platform.processor() or 'CPU')}")
+
     results = run_predictions(video_paths, args.mode)
+
+    # Attach device info to every result's inference_metadata
+    for r in results:
+        r["inference_metadata"]["device_info"] = device_info
 
     args.output_file.parent.mkdir(parents=True, exist_ok=True)
     with open(args.output_file, "w") as f:

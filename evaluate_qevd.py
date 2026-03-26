@@ -120,6 +120,15 @@ def load_results(path: Path) -> list[dict]:
     return data
 
 
+def extract_device_info(results: list[dict]) -> dict | None:
+    """Pull device_info from the first result that has it."""
+    for r in results:
+        meta = r.get("inference_metadata") or {}
+        if meta.get("device_info"):
+            return meta["device_info"]
+    return None
+
+
 def load_ground_truth(path: Path, mode: str) -> dict[str, dict]:
     """
     Returns a dict keyed by video_path.
@@ -706,6 +715,7 @@ def print_report(
     bert: dict,
     tf: dict | None,
     perf: dict,
+    device_info: dict | None = None,
 ):
     try:
         from tabulate import tabulate
@@ -733,6 +743,16 @@ def print_report(
     print(f"  Evaluation date: {date.today().isoformat()}")
     print(f"  Mode           : {mode}")
     print(f"  Videos matched : {len(aligned)}")
+    if device_info:
+        device_str = device_info.get("device", "unknown")
+        gpu = device_info.get("gpu_name")
+        mem = device_info.get("gpu_memory_gb")
+        if gpu:
+            device_str += f" — {gpu}"
+        if mem:
+            device_str += f" ({mem} GB)"
+        print(f"  Device         : {device_str}")
+        print(f"  Platform       : {device_info.get('platform')} / Python {device_info.get('python_version')}")
     print("=" * 70)
 
     # ---- Text quality metrics ----
@@ -840,6 +860,7 @@ def save_outputs(
     perf: dict,
     results_path: Path,
     gt_path: Path,
+    device_info: dict | None = None,
 ):
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -851,6 +872,7 @@ def save_outputs(
         "results_file": str(results_path),
         "ground_truth_file": str(gt_path),
         "total_videos_evaluated": len(aligned),
+        "device_info": device_info,
         "metrics": {
             "meteor": {k: v for k, v in meteor.items() if k != "per_video"},
             "rouge_l": {k: v for k, v in rouge.items() if k != "per_video"},
@@ -892,6 +914,7 @@ def main():
 
     # Load
     results = load_results(args.results_file)
+    device_info = extract_device_info(results)
     gt = load_ground_truth(args.ground_truth_file, args.mode)
     aligned = align(results, gt, args.mode)
 
@@ -926,6 +949,7 @@ def main():
         bert=bert,
         tf=tf,
         perf=perf,
+        device_info=device_info,
     )
 
     save_outputs(
@@ -940,6 +964,7 @@ def main():
         perf=perf,
         results_path=args.results_file,
         gt_path=args.ground_truth_file,
+        device_info=device_info,
     )
 
     n_pred = len(results)
