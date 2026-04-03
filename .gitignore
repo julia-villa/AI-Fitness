@@ -1,0 +1,15 @@
+# Environments & System Junk
+venv/
+__pycache__/
+_MACOSX/
+
+# Models and Weights
+*.pt
+*.bin
+*.safetensors
+*.pth
+
+# Large Data and Media
+eval/debug_frames/
+*.mp4
+*.avi

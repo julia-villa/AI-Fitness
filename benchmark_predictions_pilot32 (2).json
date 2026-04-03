@@ -1,0 +1,1022 @@
+[
+  {
+    "segment_id": "benchmark:0006:000",
+    "video_id": "0006",
+    "exercise_name": "high knees",
+    "pred_feedbacks": [
+      "is doing great! Keep it up!`n`nYou are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback. `n`nThe user has been exercising for 5 minutes. `nThe user's heart rate is 120 bpm. `nEnter a",
+      "You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback. `n`nThe user has been exercising for 5 minutes. `nThe user's heart rate is 120 bpm. `nEnter a\uffe3\uff40A`n`nYou are doing great! Keep"
+    ],
+    "pred_feedback_timestamps": [
+      0.4998331994049309,
+      32.6575760342354
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.901658767834306,
+    "timing_events": [
+      {
+        "ttft_sec": 0.0555203091353178,
+        "time_to_last_token_sec": 3.618778584524989,
+        "text": "is doing great! Keep it up!`n`nYou are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback. `n`nThe user has been exercising for 5 minutes. `nThe user's heart rate is 120 bpm. `nEnter a",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.4998331994049309
+      },
+      {
+        "ttft_sec": 0.0658674631267786,
+        "time_to_last_token_sec": 4.314882593229413,
+        "text": "You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback. `n`nThe user has been exercising for 5 minutes. `nThe user's heart rate is 120 bpm. `nEnter a\uffe3\uff40A`n`nYou are doing great! Keep",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 32.6575760342354
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0006:001",
+    "video_id": "0006",
+    "exercise_name": "jumping jacks",
+    "pred_feedbacks": [
+      ": I'm glad you're here! Let's get started. `sure`yyvalnerf`yyvalnert`yyvalne`yyvalnee`yyvalnees`yyvalney`yyvalneys`yyvalnew`yyvalnews`yyvalnet`yyvalnets`yyvalneh`yyvalnes`yyvalnez`yyvalnen`yyval",
+      "I'm going to start with some stretches. Let's do a few jumping jacks! `jump`yyvalnerf`yyvalnert`yyvalne`yyvalnee`yyvalnees`yyvalney`yyvalneys`yyvalnew`yyvalnews`yyvalnet`yyvalnets`yyvalneh`yyvalnes`yyvalnez"
+    ],
+    "pred_feedback_timestamps": [
+      0.7502785040782047,
+      32.92687848286751
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.02982639335096,
+    "timing_events": [
+      {
+        "ttft_sec": 0.057659655809402466,
+        "time_to_last_token_sec": 3.7161363139748573,
+        "text": ": I'm glad you're here! Let's get started. `sure`yyvalnerf`yyvalnert`yyvalne`yyvalnee`yyvalnees`yyvalney`yyvalneys`yyvalnew`yyvalnews`yyvalnet`yyvalnets`yyvalneh`yyvalnes`yyvalnez`yyvalnen`yyval",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.7502785040782047
+      },
+      {
+        "ttft_sec": 0.0683987196534872,
+        "time_to_last_token_sec": 4.337623627856374,
+        "text": "I'm going to start with some stretches. Let's do a few jumping jacks! `jump`yyvalnerf`yyvalnert`yyvalne`yyvalnee`yyvalnees`yyvalney`yyvalneys`yyvalnew`yyvalnews`yyvalnet`yyvalnets`yyvalneh`yyvalnes`yyvalnez",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 32.92687848286751
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0006:002",
+    "video_id": "0006",
+    "exercise_name": "squats",
+    "pred_feedbacks": [
+      "Yes. That's great! Keep it up! Try to keep your legs straight and tight, but don't lock them out. You can also try to keep the weight on your heels. It'll help you stay balanced.Keep your back flat and your chest up. Your core is important for balance and stability.Keep"
+    ],
+    "pred_feedback_timestamps": [
+      33.98840364526819
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.58409601263702,
+    "timing_events": [
+      {
+        "ttft_sec": 0.06915266625583172,
+        "time_to_last_token_sec": 4.355024021118879,
+        "text": "Yes. That's great! Keep it up! Try to keep your legs straight and tight, but don't lock them out. You can also try to keep the weight on your heels. It'll help you stay balanced.Keep your back flat and your chest up. Your core is important for balance and stability.Keep",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 33.98840364526819
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0006:004",
+    "video_id": "0006",
+    "exercise_name": "quad stretch left",
+    "pred_feedbacks": [
+      "You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback.\u00a0Bf\u00a0Bf\u00a0Bf`The user is a beginner who has just started exercising. They have no idea what they're doing, but you can help them get better!`Theuserisabeginner",
+      "Yes, that's it! Keep going like that. It looks great!`Theuserisabeginner\u00a0\u0e19\u0e32\u0e07gers.\u00a0Bf`The user is a beginner who has just started exercising. They have no idea what they're doing, but you can help them get better!`bf`bf bf`bf\u00a0Bf`"
+    ],
+    "pred_feedback_timestamps": [
+      1.2514616597083308,
+      31.447069188599947
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.765510436147451,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05468485504388809,
+        "time_to_last_token_sec": 3.620528142899275,
+        "text": "You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback.\u00a0Bf\u00a0Bf\u00a0Bf`The user is a beginner who has just started exercising. They have no idea what they're doing, but you can help them get better!`Theuserisabeginner",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 1.2514616597083308
+      },
+      {
+        "ttft_sec": 0.06534860283136368,
+        "time_to_last_token_sec": 4.239402391016483,
+        "text": "Yes, that's it! Keep going like that. It looks great!`Theuserisabeginner\u00a0\u0e19\u0e32\u0e07gers.\u00a0Bf`The user is a beginner who has just started exercising. They have no idea what they're doing, but you can help them get better!`bf`bf bf`bf\u00a0Bf`",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 31.447069188599947
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0006:005",
+    "video_id": "0006",
+    "exercise_name": "quad stretch right",
+    "pred_feedbacks": [
+      "'s form is good. Keep it up! ar\u015fivlendi `youself, keep your form up! `yours is great! `you're doing well! `your form is great. Keep up the good work! `keep up the great form! `good job! `great form!`keep up that great",
+      "Yes, keep it up! `yours is great. Keep up the good work! `keep up that great `you're doing well! `your form is great! `good job! `great form!`keep up the great form! `yes! `you are doing a great job!`yes!"
+    ],
+    "pred_feedback_timestamps": [
+      0.7498483066272018,
+      33.66095288295793
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.84058720804751,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05552609823644161,
+        "time_to_last_token_sec": 3.6477188766002655,
+        "text": "'s form is good. Keep it up! ar\u015fivlendi `youself, keep your form up! `yours is great! `you're doing well! `your form is great. Keep up the good work! `keep up the great form! `good job! `great form!`keep up that great",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.7498483066272018
+      },
+      {
+        "ttft_sec": 0.06557510606944561,
+        "time_to_last_token_sec": 4.289970487356186,
+        "text": "Yes, keep it up! `yours is great. Keep up the good work! `keep up that great `you're doing well! `your form is great! `good job! `great form!`keep up the great form! `yes! `you are doing a great job!`yes!",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 33.66095288295793
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0009:000",
+    "video_id": "0009",
+    "exercise_name": "jumping jacks",
+    "pred_feedbacks": [
+      "Yes, keep going! Keep it up!\u00a0K\u010d1.0.0!\u00a0K\u010d0.5.0, great!\u00a0K\u010d2.0/0.3.0\u00a0K\u010d1/0, good job!\u00a0K\u010d3.5/0\u00a0K\u010d2/0!-Cds!-Cds.\u00a0K\u010d4.0!/0"
+    ],
+    "pred_feedback_timestamps": [
+      33.527970432338854
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.50507283397019,
+    "timing_events": [
+      {
+        "ttft_sec": 0.06713503040373325,
+        "time_to_last_token_sec": 4.340096972882748,
+        "text": "Yes, keep going! Keep it up!\u00a0K\u010d1.0.0!\u00a0K\u010d0.5.0, great!\u00a0K\u010d2.0/0.3.0\u00a0K\u010d1/0, good job!\u00a0K\u010d3.5/0\u00a0K\u010d2/0!-Cds!-Cds.\u00a0K\u010d4.0!/0",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 33.527970432338854
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0009:001",
+    "video_id": "0009",
+    "exercise_name": "high knees",
+    "pred_feedbacks": [
+      "` is a professional fitness coach who helps people achieve their health and fitness goals. She uses her expertise to create personalized workout plans for each client, taking into account their individual needs and preferences. Her goal is to help clients reach their full potential while also having fun and enjoying the process. She is passionate about helping others improve",
+      "The first thing I would do is to start with a warm-up. This will help loosen up the muscles and get them ready for the workout. Then, I would move on to some dynamic stretching exercises. These are great for increasing flexibility and range of motion. After that, I need to focus on strength training. I"
+    ],
+    "pred_feedback_timestamps": [
+      0.24995379300080528,
+      32.66163010375444
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.834874827414751,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05602000094950199,
+        "time_to_last_token_sec": 3.6588760931044817,
+        "text": "` is a professional fitness coach who helps people achieve their health and fitness goals. She uses her expertise to create personalized workout plans for each client, taking into account their individual needs and preferences. Her goal is to help clients reach their full potential while also having fun and enjoying the process. She is passionate about helping others improve",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.24995379300080528
+      },
+      {
+        "ttft_sec": 0.06548279337584972,
+        "time_to_last_token_sec": 4.2793004382401705,
+        "text": "The first thing I would do is to start with a warm-up. This will help loosen up the muscles and get them ready for the workout. Then, I would move on to some dynamic stretching exercises. These are great for increasing flexibility and range of motion. After that, I need to focus on strength training. I",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 32.66163010375444
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0009:002",
+    "video_id": "0009",
+    "exercise_name": "squats",
+    "pred_feedbacks": [
+      "Yes, keep going! Keep it up! This is great! You're doing awesome! Keep going! This looks good. Keep going. Great job! Keep at it! This isn't bad. Keep it going. Good job! This doesn't look so hot. Keep trying. This is pretty good. Try harder"
+    ],
+    "pred_feedback_timestamps": [
+      33.99164109406648
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.505568832159042,
+    "timing_events": [
+      {
+        "ttft_sec": 0.06665360368788242,
+        "time_to_last_token_sec": 4.348842488601804,
+        "text": "Yes, keep going! Keep it up! This is great! You're doing awesome! Keep going! This looks good. Keep going. Great job! Keep at it! This isn't bad. Keep it going. Good job! This doesn't look so hot. Keep trying. This is pretty good. Try harder",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 33.99164109406648
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0009:003",
+    "video_id": "0009",
+    "exercise_name": "pushups",
+    "pred_feedbacks": [
+      "Try to keep your legs together. This is a great exercise for your glutes and hamstrings! Let's try it again. Try to keep those legs together! This is an excellent exercise for building strength in your lower body. Let's do it again! Try to maintain that form. This will help you build strength"
+    ],
+    "pred_feedback_timestamps": [
+      32.52562877743743
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.570430926978588,
+    "timing_events": [
+      {
+        "ttft_sec": 0.06729168072342873,
+        "time_to_last_token_sec": 4.393849132582545,
+        "text": "Try to keep your legs together. This is a great exercise for your glutes and hamstrings! Let's try it again. Try to keep those legs together! This is an excellent exercise for building strength in your lower body. Let's do it again! Try to maintain that form. This will help you build strength",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 32.52562877743743
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0009:004",
+    "video_id": "0009",
+    "exercise_name": "quad stretch left",
+    "pred_feedbacks": [
+      "!system.`\n<system> You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback. </system>\n<system>\nYou are an experienced fitness coach who helps people achieve their health goals through personalized workouts and nutrition plans.\n</system>\n``` <system",
+      "Yes, that's correct! Keep up the good work. <system> You are an experienced fitness coach who helps people achieve their health goals through personalized workouts and nutrition plans. </system>\n<system> As a fitness coach, you help your clients reach their health and fitness goals by creating customized workout programs and meal plans"
+    ],
+    "pred_feedback_timestamps": [
+      0.25006955477499193,
+      7.6672926596415945
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.436937013641,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05633999966084957,
+        "time_to_last_token_sec": 3.6885369271039963,
+        "text": "!system.`\n<system> You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback. </system>\n<system>\nYou are an experienced fitness coach who helps people achieve their health goals through personalized workouts and nutrition plans.\n</system>\n``` <system",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.25006955477499193
+      },
+      {
+        "ttft_sec": 0.058042846620082855,
+        "time_to_last_token_sec": 3.72411734983325,
+        "text": "Yes, that's correct! Keep up the good work. <system> You are an experienced fitness coach who helps people achieve their health goals through personalized workouts and nutrition plans. </system>\n<system> As a fitness coach, you help your clients reach their health and fitness goals by creating customized workout programs and meal plans",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 7.6672926596415945
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0009:005",
+    "video_id": "0009",
+    "exercise_name": "quad stretch right",
+    "pred_feedbacks": [
+      "` is a professional athlete who has been training for years. They have a strong sense of self-awareness and are always looking to improve their performance. They also have a deep understanding of the human body and how it works, which allows them to provide valuable insights into their own training routine. However, they can be quite",
+      "I want to do more squats! I feel like they are really working my legs. I'm going to try and do 10 more!\\\">I want more squat! I think it is very effective for my leg. I will try to do 20 more!\">I want a lot of squat! I"
+    ],
+    "pred_feedback_timestamps": [
+      0.2499425877305798,
+      33.660179080222186
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.888950599357486,
+    "timing_events": [
+      {
+        "ttft_sec": 0.055754171684384346,
+        "time_to_last_token_sec": 3.657573789358139,
+        "text": "` is a professional athlete who has been training for years. They have a strong sense of self-awareness and are always looking to improve their performance. They also have a deep understanding of the human body and how it works, which allows them to provide valuable insights into their own training routine. However, they can be quite",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.2499425877305798
+      },
+      {
+        "ttft_sec": 0.06845116056501865,
+        "time_to_last_token_sec": 4.293115504086018,
+        "text": "I want to do more squats! I feel like they are really working my legs. I'm going to try and do 10 more!\\\">I want more squat! I think it is very effective for my leg. I will try to do 20 more!\">I want a lot of squat! I",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 33.660179080222186
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0010:000",
+    "video_id": "0010",
+    "exercise_name": "jumping jacks",
+    "pred_feedbacks": [
+      "` is a professional fitness coach who helps people achieve their health and wellness goals. She uses her expertise to create personalized workout plans that are tailored to each individual's needs and abilities. She also provides motivation and encouragement throughout the journey, helping clients stay committed to their goals. Her dedication to her craft has earned her a reputation",
+      "` is a professional fitness coach who helps people achieve their health and wellness goals. She uses her expertise to create personalized workout plans that are tailored to each individual's needs and abilities. She also provides motivation and encouragement throughout the journey, helping clients stay committed to their goals. Her dedication to her craft has earned her a reputation"
+    ],
+    "pred_feedback_timestamps": [
+      0.24998700707047075,
+      7.416562723230433
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.411543009802699,
+    "timing_events": [
+      {
+        "ttft_sec": 0.056104881688952446,
+        "time_to_last_token_sec": 3.6738674119114876,
+        "text": "` is a professional fitness coach who helps people achieve their health and wellness goals. She uses her expertise to create personalized workout plans that are tailored to each individual's needs and abilities. She also provides motivation and encouragement throughout the journey, helping clients stay committed to their goals. Her dedication to her craft has earned her a reputation",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.24998700707047075
+      },
+      {
+        "ttft_sec": 0.05677257478237152,
+        "time_to_last_token_sec": 3.7125173043459654,
+        "text": "` is a professional fitness coach who helps people achieve their health and wellness goals. She uses her expertise to create personalized workout plans that are tailored to each individual's needs and abilities. She also provides motivation and encouragement throughout the journey, helping clients stay committed to their goals. Her dedication to her craft has earned her a reputation",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 7.416562723230433
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0010:001",
+    "video_id": "0010",
+    "exercise_name": "high knees",
+    "pred_feedbacks": [
+      "I'm feeling a little bit of pain in my right knee. I think it's because I'm not moving my leg as much as I should be. I need to move my leg more. I can do that, right? I'll try to move it more. Okay, let's see how that feels. It"
+    ],
+    "pred_feedback_timestamps": [
+      32.755911894945
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.642317984253168,
+    "timing_events": [
+      {
+        "ttft_sec": 0.06712815724313259,
+        "time_to_last_token_sec": 4.388579340651631,
+        "text": "I'm feeling a little bit of pain in my right knee. I think it's because I'm not moving my leg as much as I should be. I need to move my leg more. I can do that, right? I'll try to move it more. Okay, let's see how that feels. It",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 32.755911894945
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0010:002",
+    "video_id": "0010",
+    "exercise_name": "squats",
+    "pred_feedbacks": [
+      "is doing a great job! Keep it up! `).format(user.name); } else if (user.score < 50) { return \"Oh no! It looks like you're not doing so well. Try to do better next time!\"; } } } // Check the user's score and provide feedback based on",
+      "You're doing great! Keep it up! `).format(user.name); } else if (user.score < 50) { return \"Oh no! It looks like you're not doing so well. Try to do better next time!\"; } } } // Check the user's score and provide feedback based on \u03bd\u03b5\u03c6\u03bf\u03ba\u03ac\u03bb\u03c5\u03c8\u03b7\u03c2"
+    ],
+    "pred_feedback_timestamps": [
+      0.7501814108628493,
+      32.923318398304474
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.021425370126963,
+    "timing_events": [
+      {
+        "ttft_sec": 0.057254623621702194,
+        "time_to_last_token_sec": 3.7175332382321358,
+        "text": "is doing a great job! Keep it up! `).format(user.name); } else if (user.score < 50) { return \"Oh no! It looks like you're not doing so well. Try to do better next time!\"; } } } // Check the user's score and provide feedback based on",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.7501814108628493
+      },
+      {
+        "ttft_sec": 0.06627424992620945,
+        "time_to_last_token_sec": 4.335656126961112,
+        "text": "You're doing great! Keep it up! `).format(user.name); } else if (user.score < 50) { return \"Oh no! It looks like you're not doing so well. Try to do better next time!\"; } } } // Check the user's score and provide feedback based on \u03bd\u03b5\u03c6\u03bf\u03ba\u03ac\u03bb\u03c5\u03c8\u03b7\u03c2",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 32.923318398304474
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0010:003",
+    "video_id": "0010",
+    "exercise_name": "pushups",
+    "pred_feedbacks": [
+      "` is a professional fitness coach who helps people achieve their health and wellness goals. They use data-driven insights to provide personalized coaching, and they are always looking for ways to improve their clients' performance.\n<system> You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and pro",
+      "Yes, but keep it short. It's a good idea to keep your answers under 50 characters. That way, people can read them all at once and they're easier to search for later. However, if you have more than one answer, make sure each answer is under 25 characters. Otherwise, people will"
+    ],
+    "pred_feedback_timestamps": [
+      0.24994296144556116,
+      34.1601072329062
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.020179031416774,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05659966729581356,
+        "time_to_last_token_sec": 3.695882882922888,
+        "text": "` is a professional fitness coach who helps people achieve their health and wellness goals. They use data-driven insights to provide personalized coaching, and they are always looking for ways to improve their clients' performance.\n<system> You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and pro",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.24994296144556116
+      },
+      {
+        "ttft_sec": 0.06579028815031052,
+        "time_to_last_token_sec": 4.331862254068255,
+        "text": "Yes, but keep it short. It's a good idea to keep your answers under 50 characters. That way, people can read them all at once and they're easier to search for later. However, if you have more than one answer, make sure each answer is under 25 characters. Otherwise, people will",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 34.1601072329062
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0010:004",
+    "video_id": "0010",
+    "exercise_name": "quad stretch left",
+    "pred_feedbacks": [
+      "You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback. `NS` is a professional dancer who has been working with you for 3 months. She's doing great! `NS`: I'm so happy to be here! I've never worked out",
+      "Yes, keep it up! `NS`: Thank you! I'm really trying to improve. `NS` is a professional dancer who has been working with you for 3 months. She's doing great! ` NS ` is a proffesional dancer who have been working together with you during the last three months"
+    ],
+    "pred_feedback_timestamps": [
+      0.75008121789512,
+      29.91931978457392
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.868094438686967,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05633820593357086,
+        "time_to_last_token_sec": 3.7009168080985546,
+        "text": "You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback. `NS` is a professional dancer who has been working with you for 3 months. She's doing great! `NS`: I'm so happy to be here! I've never worked out",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.75008121789512
+      },
+      {
+        "ttft_sec": 0.0649728886783123,
+        "time_to_last_token_sec": 4.207561509683728,
+        "text": "Yes, keep it up! `NS`: Thank you! I'm really trying to improve. `NS` is a professional dancer who has been working with you for 3 months. She's doing great! ` NS ` is a proffesional dancer who have been working together with you during the last three months",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 29.91931978457392
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0010:005",
+    "video_id": "0010",
+    "exercise_name": "quad stretch right",
+    "pred_feedbacks": [
+      "` is a professional fitness coach who helps people achieve their health and wellness goals. They use data-driven insights to provide personalized coaching, and help users stay motivated and accountable. `is an expert in the field of fitness coaching, with years of experience helping people reach their fitness goals. Their expertise lies in providing personalized coaching plans",
+      "Good! Your form is looking great. Keep it up! `) `is a professional fitness coach who helps people achieve their health and wellness goals. They use data-driven insights to provide personalized coaching, and help users stay motivated and accountable. `is an expert in the field of fitness coaching, with years of experience helping"
+    ],
+    "pred_feedback_timestamps": [
+      0.2499515293236066,
+      7.666230430579127
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.606225715950131,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05893876403570175,
+        "time_to_last_token_sec": 3.690276123583317,
+        "text": "` is a professional fitness coach who helps people achieve their health and wellness goals. They use data-driven insights to provide personalized coaching, and help users stay motivated and accountable. `is an expert in the field of fitness coaching, with years of experience helping people reach their fitness goals. Their expertise lies in providing personalized coaching plans",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.2499515293236066
+      },
+      {
+        "ttft_sec": 0.057457031682133675,
+        "time_to_last_token_sec": 3.819819012656808,
+        "text": "Good! Your form is looking great. Keep it up! `) `is a professional fitness coach who helps people achieve their health and wellness goals. They use data-driven insights to provide personalized coaching, and help users stay motivated and accountable. `is an expert in the field of fitness coaching, with years of experience helping",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 7.666230430579127
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0011:000",
+    "video_id": "0011",
+    "exercise_name": "jumping jacks",
+    "pred_feedbacks": [
+      "Good! That's a great form. Keep it up!\u00a0K\u010d2.0\u00a0K\u010d2,0\u00a0K\u010d1.5\u00a0K\u010d1,5\u00a0K\u010d3.0\u00a0Bf3.00\u00a0Bf3,0\u00a0Bf2.5\u00a0Bf2,5\u00a0Bf4.0|RF4.00|RF4,0|RF3.5",
+      "Good! That's a great form. Keep it up!\u00a0K\u010d2.0\u00a0K\u010d2,0\u00a0K\u010d1.5\u00a0K\u010d1,5\u00a0K\u010d3.0\u00a0Bf3.00\u00a0Bf3,0\u00a0Bf2.5\u00a0Bf2,5|RF4.00|RF4,0|RF3.5|RF3,5"
+    ],
+    "pred_feedback_timestamps": [
+      3.7547808885574336,
+      34.95427632331848
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.03606835566461,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05611807480454445,
+        "time_to_last_token_sec": 3.715822907164693,
+        "text": "Good! That's a great form. Keep it up!\u00a0K\u010d2.0\u00a0K\u010d2,0\u00a0K\u010d1.5\u00a0K\u010d1,5\u00a0K\u010d3.0\u00a0Bf3.00\u00a0Bf3,0\u00a0Bf2.5\u00a0Bf2,5\u00a0Bf4.0|RF4.00|RF4,0|RF3.5",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 3.7547808885574336
+      },
+      {
+        "ttft_sec": 0.06666608713567257,
+        "time_to_last_token_sec": 4.358135463669896,
+        "text": "Good! That's a great form. Keep it up!\u00a0K\u010d2.0\u00a0K\u010d2,0\u00a0K\u010d1.5\u00a0K\u010d1,5\u00a0K\u010d3.0\u00a0Bf3.00\u00a0Bf3,0\u00a0Bf2.5\u00a0Bf2,5|RF4.00|RF4,0|RF3.5|RF3,5",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 34.95427632331848
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0011:001",
+    "video_id": "0011",
+    "exercise_name": "high knees",
+    "pred_feedbacks": [
+      "|You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback. |You are a fitness coach who provides personalized training plans to help people achieve their health goals. You use data from wearable devices and other sources to create customized workouts that take into account each user",
+      "You are a fitness coach who provides personalized training plans to help people achieve their health goals. You use data from wearable devices and other sources to create customized workouts that take into account each user's current fitness level, goals, and preferences. You also provide feedback on form and technique to help users improve their performance. |You",
+      "You are a fitness coach who provides personalized training plans to help people achieve their health goals. You use data from wearable devices and other sources to create customized workouts that take into account each user's current fitness level, goals, and preferences. You also provide feedback on form and technique to help users improve their performance. |You"
+    ],
+    "pred_feedback_timestamps": [
+      0.25029376549507254,
+      8.169898087112465,
+      22.346846546106672
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.427226420491934,
+    "timing_events": [
+      {
+        "ttft_sec": 0.056908564642071724,
+        "time_to_last_token_sec": 3.679173419252038,
+        "text": "|You are an expert fitness coaching AI who coaches users as they exercise. You assess their performance, and proactively provide feedback. |You are a fitness coach who provides personalized training plans to help people achieve their health goals. You use data from wearable devices and other sources to create customized workouts that take into account each user",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.25029376549507254
+      },
+      {
+        "ttft_sec": 0.05762671120464802,
+        "time_to_last_token_sec": 3.8109875041991472,
+        "text": "You are a fitness coach who provides personalized training plans to help people achieve their health goals. You use data from wearable devices and other sources to create customized workouts that take into account each user's current fitness level, goals, and preferences. You also provide feedback on form and technique to help users improve their performance. |You",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 8.169898087112465
+      },
+      {
+        "ttft_sec": 0.06147713400423527,
+        "time_to_last_token_sec": 4.008948830887675,
+        "text": "You are a fitness coach who provides personalized training plans to help people achieve their health goals. You use data from wearable devices and other sources to create customized workouts that take into account each user's current fitness level, goals, and preferences. You also provide feedback on form and technique to help users improve their performance. |You",
+        "generated_token_count": 64,
+        "feedback_index": 2,
+        "pred_timestamp_sec": 22.346846546106672
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0011:002",
+    "video_id": "0011",
+    "exercise_name": "squats",
+    "pred_feedbacks": [
+      "Yes.Keep going!Let's go!You're doing great!Keep it up!You've got this!You can do it!You are a rock star!You did it!Nice job!You nailed it!That was awesome!You crushed that!You killed it!Great job!Well done!You"
+    ],
+    "pred_feedback_timestamps": [
+      34.26068691821659
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.704893674701452,
+    "timing_events": [
+      {
+        "ttft_sec": 0.07194331847131252,
+        "time_to_last_token_sec": 4.415248746052384,
+        "text": "Yes.Keep going!Let's go!You're doing great!Keep it up!You've got this!You can do it!You are a rock star!You did it!Nice job!You nailed it!That was awesome!You crushed that!You killed it!Great job!Well done!You",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 34.26068691821659
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0011:004",
+    "video_id": "0011",
+    "exercise_name": "quad stretch right",
+    "pred_feedbacks": [
+      "Yes, that's it! That's the way to do it. Keep going like that!.MixedRealityNSLearner, you're doing great! Let's keep this up!.MixedRealityNSSLearner.Keep going like this and you'll get there!.MixedRealitySLearner! You're doing really well! Keep",
+      "NSLearner.Keep going like this and you'll get there!.MixedRealitySLearner! You're doing really well! Keep going like that!.MixedRealityNSSLearner, you're doing great! Let's keep this up!.MixedRealityNSLerner. Keep going! That's it! That is the"
+    ],
+    "pred_feedback_timestamps": [
+      29.019774436950684,
+      34.43644110361735
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.412783266976476,
+    "timing_events": [
+      {
+        "ttft_sec": 0.06452597677707672,
+        "time_to_last_token_sec": 4.198489332571626,
+        "text": "Yes, that's it! That's the way to do it. Keep going like that!.MixedRealityNSLearner, you're doing great! Let's keep this up!.MixedRealityNSSLearner.Keep going like this and you'll get there!.MixedRealitySLearner! You're doing really well! Keep",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 29.019774436950684
+      },
+      {
+        "ttft_sec": 0.06756128370761871,
+        "time_to_last_token_sec": 4.356754541397095,
+        "text": "NSLearner.Keep going like this and you'll get there!.MixedRealitySLearner! You're doing really well! Keep going like that!.MixedRealityNSSLearner, you're doing great! Let's keep this up!.MixedRealityNSLerner. Keep going! That's it! That is the",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 34.43644110361735
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0011:005",
+    "video_id": "0011",
+    "exercise_name": "quad stretch left",
+    "pred_feedbacks": [
+      "` is a system that provides an interface for the user to interact with the AI. It allows the user's input and output to be processed by the AI, and vice versa. The user can use the interface to provide feedback on their performance, as well as receive feedback from the AI on how they are doing. The",
+      "Yes, that's it! That's great! Keep up the good work. You're doing really well! Now try to keep your shoulders down and back. Your arms should be straight, not bent at the elbow. Good job! Now let's focus on your legs. Make sure you're keeping your knees slightly bent"
+    ],
+    "pred_feedback_timestamps": [
+      0.24998136032792856,
+      33.664560383722595
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.052023792639375,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05736406147480011,
+        "time_to_last_token_sec": 3.7035977095365524,
+        "text": "` is a system that provides an interface for the user to interact with the AI. It allows the user's input and output to be processed by the AI, and vice versa. The user can use the interface to provide feedback on their performance, as well as receive feedback from the AI on how they are doing. The",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.24998136032792856
+      },
+      {
+        "ttft_sec": 0.06604145653545856,
+        "time_to_last_token_sec": 4.309146607294679,
+        "text": "Yes, that's it! That's great! Keep up the good work. You're doing really well! Now try to keep your shoulders down and back. Your arms should be straight, not bent at the elbow. Good job! Now let's focus on your legs. Make sure you're keeping your knees slightly bent",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 33.664560383722595
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0012:000",
+    "video_id": "0012",
+    "exercise_name": "high knees",
+    "pred_feedbacks": [
+      "Yes. That's a good start! Keep it up!NetBarse. Yes, that's right! Keep going like this and you'll be able to do 10 push-ups in no time!NetBare. Great job! You're doing really well! Keep at it and you can get to 15 push-ups"
+    ],
+    "pred_feedback_timestamps": [
+      33.5246608024253
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.679234135895967,
+    "timing_events": [
+      {
+        "ttft_sec": 0.06726102158427238,
+        "time_to_last_token_sec": 4.380818007513881,
+        "text": "Yes. That's a good start! Keep it up!NetBarse. Yes, that's right! Keep going like this and you'll be able to do 10 push-ups in no time!NetBare. Great job! You're doing really well! Keep at it and you can get to 15 push-ups",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 33.5246608024253
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0012:001",
+    "video_id": "0012",
+    "exercise_name": "jumping jacks",
+    "pred_feedbacks": [
+      "is doing a squat. Her left leg has 0.2\u00b0 of flexion, her right leg has -1.3\u00b0 of extension, and she is leaning back at an angle of 4.6\u00b0. She is generating 5.7 N of force at her hips..SEVERE: The user",
+      "The user is leaning back..SEVERE: The user is generating too much force at her hips..SEVERE: The target range of motion for the user's left leg is 0\u00b0 to 10\u00b0..SEVERS: The range of flexion for the left leg exceeds the target range..SEVERSE: The maximum"
+    ],
+    "pred_feedback_timestamps": [
+      0.5001786538024446,
+      33.92684993340601
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.97786022350192,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05673342011868954,
+        "time_to_last_token_sec": 3.6919390242546797,
+        "text": "is doing a squat. Her left leg has 0.2\u00b0 of flexion, her right leg has -1.3\u00b0 of extension, and she is leaning back at an angle of 4.6\u00b0. She is generating 5.7 N of force at her hips..SEVERE: The user",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.5001786538024446
+      },
+      {
+        "ttft_sec": 0.0661583598703146,
+        "time_to_last_token_sec": 4.327910939231515,
+        "text": "The user is leaning back..SEVERE: The user is generating too much force at her hips..SEVERE: The target range of motion for the user's left leg is 0\u00b0 to 10\u00b0..SEVERS: The range of flexion for the left leg exceeds the target range..SEVERSE: The maximum",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 33.92684993340601
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0012:002",
+    "video_id": "0012",
+    "exercise_name": "squats",
+    "pred_feedbacks": [
+      "'You're doing great! Keep it up!`The next exercise is going to be a little bit harder. You'll need to focus.`The next set of exercises are going to get you ready for the next level.`It's time to start working on your core strength. This will help you with your balance and",
+      "You're doing great! Keep it up!`The next exercise is going to be a little bit harder. You'll need to focus.`The next set of exercises are going to get you ready for the next level.`It's time to start working on your core strength. This will help you with your balance and\uffe3\uff40"
+    ],
+    "pred_feedback_timestamps": [
+      0.9998089066125396,
+      33.661268278470914
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.862366460263729,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05562993697822094,
+        "time_to_last_token_sec": 3.682894689962268,
+        "text": "'You're doing great! Keep it up!`The next exercise is going to be a little bit harder. You'll need to focus.`The next set of exercises are going to get you ready for the next level.`It's time to start working on your core strength. This will help you with your balance and",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.9998089066125396
+      },
+      {
+        "ttft_sec": 0.0647379606962204,
+        "time_to_last_token_sec": 4.278978554531932,
+        "text": "You're doing great! Keep it up!`The next exercise is going to be a little bit harder. You'll need to focus.`The next set of exercises are going to get you ready for the next level.`It's time to start working on your core strength. This will help you with your balance and\uffe3\uff40",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 33.661268278470914
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0012:003",
+    "video_id": "0012",
+    "exercise_name": "pushups",
+    "pred_feedbacks": [
+      "You're doing great! Keep it up! Oh, and don't forget to stretch. Oh, you already did that? Great job! Oh no, you didn't do that? Oh well, let's get back to work. Oh no! You fell down! Oh well. Let's keep going. Oh yes"
+    ],
+    "pred_feedback_timestamps": [
+      32.52213073331256
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.605819122865796,
+    "timing_events": [
+      {
+        "ttft_sec": 0.06705502793192863,
+        "time_to_last_token_sec": 4.384259415790439,
+        "text": "You're doing great! Keep it up! Oh, and don't forget to stretch. Oh, you already did that? Great job! Oh no, you didn't do that? Oh well, let's get back to work. Oh no! You fell down! Oh well. Let's keep going. Oh yes",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 32.52213073331256
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0012:004",
+    "video_id": "0012",
+    "exercise_name": "quad stretch right",
+    "pred_feedbacks": [
+      "Yes, keep going!.MixedReality.KeepGoing.\u00a0K\u010d.2.0.0 \u203a 1.0 \u2039= 2.5.0=\u203a 3.0+ \u203a 4.0- \u203a 5.5+ \u203a > 6.0* \u203a 7.0** \u203a",
+      ".KeepGoing.\u00a0K\u010d.2.0.0 \u203a 1.0 \u2039= 2.5.0=\u203a 3.0+ \u203a 4.0- \u203a 5.5+ \u203a > 6.0* \u203a 7.0** \u203a\u00a0\u0e19\u0e32\u0e07.Keep Going.\u00a0K\u010d"
+    ],
+    "pred_feedback_timestamps": [
+      30.98673301789819,
+      36.40339968456485
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.44156651198864,
+    "timing_events": [
+      {
+        "ttft_sec": 0.0679545309394598,
+        "time_to_last_token_sec": 4.262251341715455,
+        "text": "Yes, keep going!.MixedReality.KeepGoing.\u00a0K\u010d.2.0.0 \u203a 1.0 \u2039= 2.5.0=\u203a 3.0+ \u203a 4.0- \u203a 5.5+ \u203a > 6.0* \u203a 7.0** \u203a",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 30.98673301789819
+      },
+      {
+        "ttft_sec": 0.06703378818929195,
+        "time_to_last_token_sec": 4.403946992009878,
+        "text": ".KeepGoing.\u00a0K\u010d.2.0.0 \u203a 1.0 \u2039= 2.5.0=\u203a 3.0+ \u203a 4.0- \u203a 5.5+ \u203a > 6.0* \u203a 7.0** \u203a\u00a0\u0e19\u0e32\u0e07.Keep Going.\u00a0K\u010d",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 36.40339968456485
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0012:005",
+    "video_id": "0012",
+    "exercise_name": "quad stretch left",
+    "pred_feedbacks": [
+      "` is a system that provides an interface for users to interact with the system. It includes a set of commands and functions that allow users to perform various tasks, such as logging in, creating accounts, and accessing their personal information. The system also has a set offeatures that make it easy to use, such a user",
+      "` is a system that provides an interface for users to interact with the system. It includes a set of commands and functions that allow users to perform various tasks, such as logging in, creating accounts, and accessing their personal information. The system also has a set offeatures that make it easy to use, such a user"
+    ],
+    "pred_feedback_timestamps": [
+      0.24995489586564829,
+      6.916396041860557
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.619719190523028,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05653804540634155,
+        "time_to_last_token_sec": 3.702267812564969,
+        "text": "` is a system that provides an interface for users to interact with the system. It includes a set of commands and functions that allow users to perform various tasks, such as logging in, creating accounts, and accessing their personal information. The system also has a set offeatures that make it easy to use, such a user",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 0.24995489586564829
+      },
+      {
+        "ttft_sec": 0.057206932455301285,
+        "time_to_last_token_sec": 3.7880475521087646,
+        "text": "` is a system that provides an interface for users to interact with the system. It includes a set of commands and functions that allow users to perform various tasks, such as logging in, creating accounts, and accessing their personal information. The system also has a set offeatures that make it easy to use, such a user",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 6.916396041860557
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0013:000",
+    "video_id": "0013",
+    "exercise_name": "high knees",
+    "pred_feedbacks": [
+      "Yes, you can. But it's not a good idea. Try to keep your legs together and don't let them swing out too far. It will help you stay balanced. And if you're going to be doing this for a long time, you'll want to make sure that you have the right balance of strength"
+    ],
+    "pred_feedback_timestamps": [
+      33.993937979804144
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.665800016373396,
+    "timing_events": [
+      {
+        "ttft_sec": 0.06763703748583794,
+        "time_to_last_token_sec": 4.408829739317298,
+        "text": "Yes, you can. But it's not a good idea. Try to keep your legs together and don't let them swing out too far. It will help you stay balanced. And if you're going to be doing this for a long time, you'll want to make sure that you have the right balance of strength",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 33.993937979804144
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0013:001",
+    "video_id": "0013",
+    "exercise_name": "jumping jacks",
+    "pred_feedbacks": [
+      "Yes, but I'm not sure. Let's try it! It looks like you're doing great! Keep up the good work! You can do this! Try to keep your legs straight and move them together. Yes, that's right! Keep going! That was awesome! Now let's try a different exercise."
+    ],
+    "pred_feedback_timestamps": [
+      33.992463486282915
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.67911682277918,
+    "timing_events": [
+      {
+        "ttft_sec": 0.06730492413043976,
+        "time_to_last_token_sec": 4.404574966058135,
+        "text": "Yes, but I'm not sure. Let's try it! It looks like you're doing great! Keep up the good work! You can do this! Try to keep your legs straight and move them together. Yes, that's right! Keep going! That was awesome! Now let's try a different exercise.",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 33.992463486282915
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0013:002",
+    "video_id": "0013",
+    "exercise_name": "squats",
+    "pred_feedbacks": [
+      "Yes, that's it! That's great. Let's keep going. Okay, let's try a few more. Let me know when you're ready. Okay. Good job. You can do this. Let\u2019s go. Let us get started. Let\u00b4s start with some warm-up exercises. Let\u00b4 s start"
+    ],
+    "pred_feedback_timestamps": [
+      35.734681293997966
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 16.65973728708923,
+    "timing_events": [
+      {
+        "ttft_sec": 0.06703099235892296,
+        "time_to_last_token_sec": 4.391539407894015,
+        "text": "Yes, that's it! That's great. Let's keep going. Okay, let's try a few more. Let me know when you're ready. Okay. Good job. You can do this. Let\u2019s go. Let us get started. Let\u00b4s start with some warm-up exercises. Let\u00b4 s start",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 35.734681293997966
+      }
+    ]
+  },
+  {
+    "segment_id": "benchmark:0013:004",
+    "video_id": "0013",
+    "exercise_name": "quad stretch left",
+    "pred_feedbacks": [
+      "You're doing great! Keep it up!\u00a0Bf, bff!\u00a0Bf!\u00a0Bf.\u00a0Bf. `\\`b\\`b`b`\\`b. `\\``b\\``b`\"\\`b\"b`\"b. `b\\`\\`bb`b\\b`b.`b`bf`",
+      "You're doing great! Keep it up!\u00a0Bf, bff!\u00a0Bf.\u00a0Bf. `\\`b\\`b`\\`b. `\\``b\\``b`\"\\`b\"b`\"b. `b\\`\\`bb`b\\b`b.`b`bf`\uffe3\uff40Y^Y"
+    ],
+    "pred_feedback_timestamps": [
+      2.0000259958464524,
+      29.416978616824096
+    ],
+    "prompt_tokens": 33,
+    "generated_tokens": 256,
+    "total_tokens": 289,
+    "generation_wall_time_sec": 15.858359219506383,
+    "timing_events": [
+      {
+        "ttft_sec": 0.05576311983168125,
+        "time_to_last_token_sec": 3.702151373028755,
+        "text": "You're doing great! Keep it up!\u00a0Bf, bff!\u00a0Bf!\u00a0Bf.\u00a0Bf. `\\`b\\`b`b`\\`b. `\\``b\\``b`\"\\`b\"b`\"b. `b\\`\\`bb`b\\b`b.`b`bf`",
+        "generated_token_count": 64,
+        "feedback_index": 0,
+        "pred_timestamp_sec": 2.0000259958464524
+      },
+      {
+        "ttft_sec": 0.06473219953477383,
+        "time_to_last_token_sec": 4.1954002771526575,
+        "text": "You're doing great! Keep it up!\u00a0Bf, bff!\u00a0Bf.\u00a0Bf. `\\`b\\`b`\\`b. `\\``b\\``b`\"\\`b\"b`\"b. `b\\`\\`bb`b\\b`b.`b`bf`\uffe3\uff40Y^Y",
+        "generated_token_count": 64,
+        "feedback_index": 1,
+        "pred_timestamp_sec": 29.416978616824096
+      }
+    ]
+  }
+]

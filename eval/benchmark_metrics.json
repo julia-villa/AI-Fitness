@@ -1,0 +1,622 @@
+{
+  "num_prediction_segments": 398,
+  "num_reference_segments": 398,
+  "missing_reference_segment_ids": [],
+  "meteor": 0.0884341915401256,
+  "rougeL": 0.04072616187011086,
+  "bert_score": 0.8285481515776347,
+  "temporal_f_score": 0.16980342952711677,
+  "mean_ttft_sec": 1.4481301283919754,
+  "mean_time_to_last_token_sec": 1.6071360678392808,
+  "tokens_per_second": 45.40678031697122,
+  "token_usage": {
+    "total_prompt_tokens": 29806,
+    "total_generated_tokens": 29044,
+    "total_tokens": 58850,
+    "mean_prompt_tokens": 74.8894472361809,
+    "mean_generated_tokens": 72.9748743718593,
+    "mean_total_tokens": 147.8643216080402
+  },
+  "matched_feedback_examples": [
+    {
+      "segment_id": "benchmark:0006:001",
+      "temporal_fscore_running": 0.13333333333308445,
+      "gt_feedback": "15",
+      "pred_feedback": "The person's back is arched and their legs are bent at the knees, indicating a proper jumping jack form. However, the person's arms are not fully extended, which is a potential issue. The correct form should involve fully extended arms and legs, with the arms reaching overhead and the legs parallel to the ground. The person's form is not perfect, but it is better than a completely flawless form, as it shows effort and commitment to the exercise."
+    },
+    {
+      "segment_id": "benchmark:0006:002",
+      "temporal_fscore_running": 0.19047619047592745,
+      "gt_feedback": "Yes! That's it! Good stance! Now try going even deeper into your squat!",
+      "pred_feedback": "The person is performing squats with their back and legs in the correct position. However, the form is not perfect, as the person's knees are not aligned with their toes, which is a common mistake in squats. The correct form should involve knees being aligned with toes, and the person should maintain a straight line from their heels to their knees throughout the movement."
+    },
+    {
+      "segment_id": "benchmark:0006:004",
+      "temporal_fscore_running": 0.22222222222195337,
+      "gt_feedback": "Looking good! Keep it up!",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle on the front of the thigh. The form is not perfect, as the person's back is not straight and their legs are not fully extended. The correct form should have the back straight, the legs fully extended, and the body weight evenly distributed between the front and back legs. The coach should provide feedback on the form, suggesting adjustments to improve the execution of the quad stretch."
+    },
+    {
+      "segment_id": "benchmark:0009:000",
+      "temporal_fscore_running": 0.199999999999735,
+      "gt_feedback": "Yes! That's it!",
+      "pred_feedback": "The person's back is straight, and their legs are at a 90-degree angle, indicating a proper jumping jack form."
+    },
+    {
+      "segment_id": "benchmark:0009:003",
+      "temporal_fscore_running": 0.16393442622925128,
+      "gt_feedback": "5",
+      "pred_feedback": "The person is standing on their toes with their back to the camera, and their legs are bent at the knees. The form appears to be slightly off, with the person's back not fully straight and their knees not at a 90-degree angle. The correct form should involve straightening the back and keeping the knees at a 90-degree angle. The person should also maintain a straight line from the toes to the heels while performing the pushups."
+    },
+    {
+      "segment_id": "benchmark:0009:005",
+      "temporal_fscore_running": 0.16438356164357515,
+      "gt_feedback": "Looking great! Keep going!",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle in the front of the thigh. The form appears to be slightly off, with the person's back and limbs not aligned correctly. The critique suggests that the form is not perfect and should be corrected to ensure proper muscle engagement and avoid potential injuries."
+    },
+    {
+      "segment_id": "benchmark:0010:000",
+      "temporal_fscore_running": 0.1707317073168192,
+      "gt_feedback": "15",
+      "pred_feedback": "The person's back is arched and their legs are bent at the knees, indicating a proper jumping jack form. However, the person's arms are not fully extended, which is a potential issue. The correct form should involve fully extended arms and legs, with the arms reaching overhead and the legs parallel to the ground. The person's form is not perfect, but it is better than a completely flawless form, as it shows effort and awareness of the correct technique."
+    },
+    {
+      "segment_id": "benchmark:0010:001",
+      "temporal_fscore_running": 0.18390804597675306,
+      "gt_feedback": "Your knees are still too low! Aim for waist height!",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees. The form appears to be slightly off, with the knees not fully bent and the back not straight. The coach should provide feedback on the form, suggesting that the knees should be bent more and the back should be straight to improve the exercise."
+    },
+    {
+      "segment_id": "benchmark:0011:000",
+      "temporal_fscore_running": 0.15254237288109482,
+      "gt_feedback": "15",
+      "pred_feedback": "The person's back is arched and their legs are bent at the knees, indicating a proper jumping jack form. However, the person's arms are not fully extended, which is a potential issue. The correct form should involve fully extended arms and legs, with the arms reaching overhead and the legs parallel to the ground. The person's form is not perfect, as their arms are not fully extended, but they are still making an effort to perform the jumping jack correctly."
+    },
+    {
+      "segment_id": "benchmark:0011:001",
+      "temporal_fscore_running": 0.16129032258038306,
+      "gt_feedback": "Still waiting for higher knees!",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees, indicating a proper form. The form is good, and the person is performing high knees correctly."
+    },
+    {
+      "segment_id": "benchmark:0011:002",
+      "temporal_fscore_running": 0.1705426356586501,
+      "gt_feedback": "Come on! Wider stance! You still have time!",
+      "pred_feedback": "The person's back is straight, and their legs are at a 90-degree angle. The form appears to be slightly off, with the knees not quite at a 90-degree angle. The fix would be to adjust the knees to a more 90-degree angle, ensuring proper alignment and balance during the squats."
+    },
+    {
+      "segment_id": "benchmark:0011:005",
+      "temporal_fscore_running": 0.17021276595718102,
+      "gt_feedback": "Stretch the front of that leg out!",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle on the front of the thigh. The form is slightly off, with the person's back and limbs not aligned correctly. The critique suggests that the form is not perfect and should be corrected to ensure proper muscle engagement and avoid potential injuries."
+    },
+    {
+      "segment_id": "benchmark:0012:000",
+      "temporal_fscore_running": 0.17687074829905336,
+      "gt_feedback": "There is still time! Pick up the pace!",
+      "pred_feedback": "The person is performing high knees in a gym, with their back and limbs in a straight line. The form appears to be slightly off, as the person's back is not fully straight and their knees are not aligned with their toes. The coach should provide feedback on the form, suggesting that the knees are not aligned with the toes and the back should be straight. The coach should emphasize the importance of maintaining proper form to avoid injuries and ensure effective exercise."
+    },
+    {
+      "segment_id": "benchmark:0012:002",
+      "temporal_fscore_running": 0.1739130434779964,
+      "gt_feedback": "Don't stop! Keep it coming!",
+      "pred_feedback": "The person is performing squats with their back and legs in the correct position. However, the form is not perfect, as the person's knees are not aligned with their toes, which is a common mistake in squats. The correct form should involve knees being aligned with toes, and the person should maintain a straight back and a balanced posture throughout the exercise."
+    },
+    {
+      "segment_id": "benchmark:0012:004",
+      "temporal_fscore_running": 0.1744186046508961,
+      "gt_feedback": "Careful you're not stretching the wrong leg now. We want to stretch both legs.",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle on the front of the thigh. The form appears to be slightly off, with the person's back and limbs not aligned correctly. The critique suggests that the form is not perfect and should be corrected to ensure proper muscle engagement and avoid potential injuries."
+    },
+    {
+      "segment_id": "benchmark:0012:005",
+      "temporal_fscore_running": 0.1797752808986093,
+      "gt_feedback": "That's not right! Stretch your leg towards your back! The other way!",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle on the front of the thigh. The form is not perfect, as the person's back is not straight and their leg is not fully extended. The correct form should have the back straight, the leg extended straight, and the foot placed on the ground. The person should also maintain proper balance and engage their core muscles during the stretch."
+    },
+    {
+      "segment_id": "benchmark:0013:000",
+      "temporal_fscore_running": 0.18478260869538465,
+      "gt_feedback": "There is still time! Pick up the speed!",
+      "pred_feedback": "The person is standing on one leg with the other leg lifted off the ground, demonstrating a high knee exercise. The form appears to be slightly off, with the back and limbs not aligned properly. The critique suggests that the person should maintain a more balanced and aligned posture, with the back and limbs properly positioned, to ensure effective and safe high knee exercise."
+    },
+    {
+      "segment_id": "benchmark:0013:002",
+      "temporal_fscore_running": 0.18367346938748697,
+      "gt_feedback": "More space between your knees and deeper squats, please.",
+      "pred_feedback": "The person is performing squats with their back and legs in the correct position. However, the form is not perfect, as the person's knees are not aligned with their toes, which is a common mistake in squats. The correct form should involve knees being aligned with toes, and the weight should be distributed evenly between the front and back legs. The person should also maintain a straight back and engage their core muscles during the movement."
+    },
+    {
+      "segment_id": "benchmark:0015:000",
+      "temporal_fscore_running": 0.15702479338815808,
+      "gt_feedback": "15 reps! Keep going!",
+      "pred_feedback": "The person is performing jumping jacks in a room with various objects, including a TV, a chair, and a computer. The person is wearing a red jacket and black pants, and their arms are raised in the air. The form of the jumping jacks appears to be slightly off, with the person's back and limbs not aligned correctly. The coach should provide feedback on the form, suggesting that the person should keep the form up and not perfect, but rather strive for improvement."
+    },
+    {
+      "segment_id": "benchmark:0015:001",
+      "temporal_fscore_running": 0.1612903225803733,
+      "gt_feedback": "Come on! Waiting for you to bring those knees all the way up to your chest.",
+      "pred_feedback": "The person is performing high knees with their arms outstretched, and their back is straight. The form appears to be slightly off, with the knees not fully extended and the arms not fully outstretched. The coach should provide feedback on the form, suggesting that the knees should be fully extended and the arms should be fully outstretched to maintain proper form during high knees."
+    },
+    {
+      "segment_id": "benchmark:0015:002",
+      "temporal_fscore_running": 0.1653543307083894,
+      "gt_feedback": "Still waiting for you to improve your stance!",
+      "pred_feedback": "The person's back is straight, and their limbs are in a straight position. The form appears to be slightly off, with the knees not fully bent and the legs not fully extended. The coach should provide feedback on the form, suggesting that the knees should be closer to the ground and the legs should be more extended to improve the squats' effectiveness and reduce the risk of injury."
+    },
+    {
+      "segment_id": "benchmark:0015:004",
+      "temporal_fscore_running": 0.16603773584878348,
+      "gt_feedback": "Love it! That's a good stretch!",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle on the front of the thigh. The form is slightly off, with the person's back and limbs not aligned correctly. The critique suggests that the form is not perfect and should be corrected to ensure proper muscle engagement and avoid potential injuries."
+    },
+    {
+      "segment_id": "benchmark:0015:005",
+      "temporal_fscore_running": 0.16974169741670092,
+      "gt_feedback": "That's it! Feel the burn!",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle in the front of the thigh. The form appears to be slightly off, with the person's back and limbs not aligned correctly. The critique suggests that the form is not perfect and should be corrected to ensure proper muscle engagement and avoid potential injuries."
+    },
+    {
+      "segment_id": "benchmark:0016:000",
+      "temporal_fscore_running": 0.1720430107524164,
+      "gt_feedback": "15",
+      "pred_feedback": "The person's back is arched and their arms are fully extended, while their legs are bent at the knees. The form appears to be slightly off-center, with the legs closer to the ground than the upper body. The coach should provide feedback on the form, suggesting that the legs should be slightly higher than the upper body to improve the jumping jacks' effectiveness and reduce the risk of injury."
+    },
+    {
+      "segment_id": "benchmark:0016:001",
+      "temporal_fscore_running": 0.17482517482490367,
+      "gt_feedback": "Knees up way higher! There is still time!",
+      "pred_feedback": "The person's back is straight, and their limbs are in a straight position. The form appears to be slightly off, with the knees not fully bent and the person's feet not touching the ground. The coach should provide feedback on the form, suggesting that the knees should be bent slightly and the person's feet should be closer to the ground to improve the exercise."
+    },
+    {
+      "segment_id": "benchmark:0016:002",
+      "temporal_fscore_running": 0.17808219178055057,
+      "gt_feedback": "I love your form here. Work it, work it.",
+      "pred_feedback": "The person's back is not straight, and their limbs are not aligned properly. The correct form should involve the knees being slightly bent, the back straight, and the legs parallel to each other. The current form is incorrect, as the person's back is not straight and their limbs are not aligned properly."
+    },
+    {
+      "segment_id": "benchmark:0016:004",
+      "temporal_fscore_running": 0.18181818181790962,
+      "gt_feedback": "Wow... you're crushing it! Let's keep it going",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees. The form appears to be slightly off, with the knees being closer to the ground than ideal. The coach should provide feedback on the form, suggesting that the knees should be closer to the ground and the back should be straight. The coach should also emphasize the importance of maintaining good form to prevent injuries and ensure proper muscle engagement during the exercise."
+    },
+    {
+      "segment_id": "benchmark:0016:005",
+      "temporal_fscore_running": 0.18543046357588586,
+      "gt_feedback": "Looking good! Keep it up!",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle on the front of the thigh. The form is slightly off, with the person's back and limbs not aligned correctly. The critique suggests that the person should adjust their form to ensure proper alignment of the back and limbs, and maintain the correct posture while performing the stretch."
+    },
+    {
+      "segment_id": "benchmark:0017:002",
+      "temporal_fscore_running": 0.18412698412671155,
+      "gt_feedback": "It's called lunge jumps not lunge walk!",
+      "pred_feedback": "The person's back is turned, and their legs are bent at the knees, indicating a lunge jump. The form appears to be slightly off, with the knees not being at a 90-degree angle and the back not being straight. The fix would be to adjust the knees to a 90-degree angle and the back to a more neutral position to improve the form."
+    },
+    {
+      "segment_id": "benchmark:0017:005",
+      "temporal_fscore_running": 0.18691588785019464,
+      "gt_feedback": "That's does not seem right! Let's get started with the deltoid stretch!",
+      "pred_feedback": "The person's back is straight, and their left arm is extended forward, while their right arm is bent at the elbow. The person is standing on a blue line, which is placed on the floor. The form appears to be slightly off-center, with the left arm slightly higher than the right arm. The coach should provide feedback on the form, suggesting that the person should keep the form slightly off-center, with the left arm slightly higher than the right arm, to improve the stretch and avoid putting too much pressure on the elbow."
+    },
+    {
+      "segment_id": "benchmark:0018:005",
+      "temporal_fscore_running": 0.17318435754162698,
+      "gt_feedback": "Wow... you're crushing it! Keep it going.",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle on the front of the thigh. The form is slightly off, with the person's back and limbs not aligned correctly. The critique suggests that the form is not perfect and should be corrected to ensure proper muscle engagement and avoid potential injuries."
+    },
+    {
+      "segment_id": "benchmark:0019:001",
+      "temporal_fscore_running": 0.17344173441707092,
+      "gt_feedback": "I am sure you can do a few more butt kickers! I am waiting.",
+      "pred_feedback": "The person's back is turned, and they are standing on their toes with their legs spread apart. The form appears to be slightly off, with the legs not fully extended and the back not fully straight. The coach should provide feedback on the form, suggesting that the legs should be fully extended and the back should be straight to achieve a more balanced and effective butt kick."
+    },
+    {
+      "segment_id": "benchmark:0019:004",
+      "temporal_fscore_running": 0.17232375979084696,
+      "gt_feedback": "Give it a nice big pull.",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle in the front of the thigh. The form appears to be slightly off, with the person's back and limbs not aligned correctly. The critique suggests that the form is not perfect and should be corrected to ensure proper muscle engagement and avoid potential injuries."
+    },
+    {
+      "segment_id": "benchmark:0019:005",
+      "temporal_fscore_running": 0.1757105943149685,
+      "gt_feedback": "Careful not to lose your balance.",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle on the front of the thigh. The form is not perfect, as the person's back is not straight and their legs are not fully extended. The correct form should have the back straight, knees slightly bent, and the legs fully extended. The coach should provide feedback on the form, suggesting that the person should keep the form consistent and not exaggerate the stretch. If the form is completely flawless, the coach should encourage the person to continue practicing and maintaining good form."
+    },
+    {
+      "segment_id": "benchmark:0023:005",
+      "temporal_fscore_running": 0.16826923076895647,
+      "gt_feedback": "Looking good! Keep stretching!",
+      "pred_feedback": "The person is performing a deltoid stretch, with their back and limbs in a straight line. The form appears to be slightly off, with the back being more vertical than the front and the limbs not being fully straight. The coach should provide feedback on the form, suggesting that the back should be more horizontal and the limbs should be more straight. The coach should also emphasize the importance of maintaining good form during the stretch to avoid injury and maximize the effectiveness of the exercise."
+    },
+    {
+      "segment_id": "benchmark:0024:002",
+      "temporal_fscore_running": 0.1666666666663912,
+      "gt_feedback": "Still waiting for you to start!",
+      "pred_feedback": "The person is performing walking lunges with their back and limbs in the correct position. The form is good, and the person is maintaining proper alignment throughout the exercise."
+    },
+    {
+      "segment_id": "benchmark:0025:001",
+      "temporal_fscore_running": 0.16666666666639116,
+      "gt_feedback": "Now put those legs together and move them!",
+      "pred_feedback": "The person's back is arched, and their legs are bent at the knees, indicating a proper jumping jack form. The form is good, and the person is maintaining a straight line with their legs and keeping their back straight."
+    },
+    {
+      "segment_id": "benchmark:0026:000",
+      "temporal_fscore_running": 0.1666666666663911,
+      "gt_feedback": "Don't stop! The key to these is to keep moving. Let the rhythm help you burn.",
+      "pred_feedback": "The person's back is arched and their legs are bent at the knees, indicating a proper jumping jack form. However, the person's arms are not fully extended, which is a potential issue. The correct form should involve fully extended arms and legs, with the arms reaching overhead and the legs parallel to the ground. The person's form is not perfect, but it is better than a completely flawless form, as it shows progress and effort."
+    },
+    {
+      "segment_id": "benchmark:0026:001",
+      "temporal_fscore_running": 0.16846652267791062,
+      "gt_feedback": "Yes! When the heels are super close and hitting the butt, we're getting the burn!",
+      "pred_feedback": "The person's back is arched, and their legs are bent at the knees. The form appears to be slightly off, with the legs not fully extended. The coach should provide feedback on the form, suggesting that the legs should be straightened out and the back should be more upright. The coach should also emphasize the importance of maintaining proper form to avoid injury and ensure the effectiveness of the exercise."
+    },
+    {
+      "segment_id": "benchmark:0026:002",
+      "temporal_fscore_running": 0.1705756929634775,
+      "gt_feedback": "We are at 5 reps!",
+      "pred_feedback": "The person's back is in a straight line, and their limbs are in a straight line, indicating a proper plank position. However, the person's form could be improved. The correct form would involve the hips and shoulders being slightly bent, and the person's hands should be placed shoulder-width apart, with the elbows at a 90-degree angle. The person should also engage their core muscles to maintain stability throughout the exercise."
+    },
+    {
+      "segment_id": "benchmark:0026:003",
+      "temporal_fscore_running": 0.17263157894709322,
+      "gt_feedback": "Keep going! Excellent work!",
+      "pred_feedback": "The person's back is not straight, and their limbs are not aligned properly. The form is not perfect, and it needs improvement. The coach should provide specific feedback on how to correct the form, such as adjusting the position of the back and limbs, and ensuring proper alignment of the body."
+    },
+    {
+      "segment_id": "benchmark:0026:005",
+      "temporal_fscore_running": 0.17177914110402012,
+      "gt_feedback": "Tighten your core to maintain your balance!",
+      "pred_feedback": "The person is performing a quad stretch, with their back and legs in a straight line. The form appears to be slightly off, with the back being more vertical than the legs. The coach should provide feedback on the form, suggesting that the back should be more horizontal and the legs should be more vertical to improve the stretch."
+    },
+    {
+      "segment_id": "benchmark:0027:002",
+      "temporal_fscore_running": 0.16996047430802547,
+      "gt_feedback": "I am waiting for you to tap your shoulders.",
+      "pred_feedback": "The person is in a plank position, with their back straight and legs extended, and they are tapping their toes on the floor. The form appears to be slightly off-center, with the toes closer to the ground than the heels. The coach should provide feedback on the form, suggesting that the toes should be closer to the heels for a more balanced and effective plank tap."
+    },
+    {
+      "segment_id": "benchmark:0027:005",
+      "temporal_fscore_running": 0.1698841698838949,
+      "gt_feedback": "That does not seem right! Use your left arm  to support the stretch.",
+      "pred_feedback": "The person is standing with their back straight and legs apart, and they are stretching their right deltoid muscle. The form appears to be slightly off, with the legs being closer together than ideal. The coach should provide feedback on the form, suggesting that the legs should be more spread apart to achieve a better stretch."
+    },
+    {
+      "segment_id": "benchmark:0028:002",
+      "temporal_fscore_running": 0.16981132075444194,
+      "gt_feedback": "Your lunges are too shallow! Try to go deeper with the lunges!",
+      "pred_feedback": "The person is standing on a white floor with blue lines, and they are wearing a blue jacket. They are performing a walking lunge exercise, and their form appears to be slightly off. The correct form should involve keeping the back straight, knees slightly bent, and the weight distributed evenly between the front and back legs. The person's form is not perfect, as their back is not straight, and their knees are not bent as they should be during the exercise. The correct form should be corrected to ensure proper weight distribution and knee alignment."
+    },
+    {
+      "segment_id": "benchmark:0028:004",
+      "temporal_fscore_running": 0.17164179104450103,
+      "gt_feedback": "Looks good. Now stretch out that shoulder.",
+      "pred_feedback": "The person is performing a deltoid stretch on the left side of their body, with their back and limbs in a straight line. The form appears to be slightly off, with the person's back not fully straight and their limbs not aligned parallel to each other. The coach should provide feedback on the form, suggesting that the back should be straight and the limbs should be parallel to each other for a more effective and safe stretch."
+    },
+    {
+      "segment_id": "benchmark:0029:003",
+      "temporal_fscore_running": 0.16666666666639068,
+      "gt_feedback": "Yeah! That's a nice speed!",
+      "pred_feedback": "The person is standing on one leg with their back to the camera, and their other leg is bent at the knee. The form appears to be slightly off-balance, with the back leg being higher than the front leg. The fix would be to adjust the position of the back leg to match the front leg, ensuring a more balanced stance."
+    },
+    {
+      "segment_id": "benchmark:0029:005",
+      "temporal_fscore_running": 0.16637781629088552,
+      "gt_feedback": "Slow it down, champ! Feel the burn!",
+      "pred_feedback": "The person's back is straight, and their limbs are in a straight position. The form appears to be slightly off, with the arms resting on the back and the legs bent at the knees. The coach should provide feedback on the form, suggesting that the person's back should be straight and the legs should be in a straight position, with the arms resting on the back and the legs bent at the knees. The coach should also emphasize the importance of maintaining good form to avoid potential injuries and to maximize the effectiveness of the exercise."
+    },
+    {
+      "segment_id": "benchmark:0030:003",
+      "temporal_fscore_running": 0.16225165562886446,
+      "gt_feedback": "5 reps, keep it up!",
+      "pred_feedback": "The person is standing with their back to the camera, arms behind their head, and legs apart. The form appears to be slightly off, with the knees not quite at a 90-degree angle. The coach should provide feedback on the form, suggesting that the knees should be closer to a 90-degree angle for a proper squat."
+    },
+    {
+      "segment_id": "benchmark:0030:004",
+      "temporal_fscore_running": 0.1642036124791995,
+      "gt_feedback": "Keep up the stretch! Looking good!",
+      "pred_feedback": "The person is performing a deltoid stretch on the left side of their body, with their back and limbs in a straight line. The form appears to be slightly off, as the person's back is not fully straight and their limbs are not aligned parallel to each other. The correct form should have the back straight and the limbs parallel to each other. The coach should provide feedback on the form, suggesting that the person should keep it up, meaning that the form is not perfect but can be improved. If the form is completely flawless, the coach should commend the person for maintaining good form and encourage them to continue practicing."
+    },
+    {
+      "segment_id": "benchmark:0031:001",
+      "temporal_fscore_running": 0.1631999999997242,
+      "gt_feedback": "This is looking great. Keep it up.",
+      "pred_feedback": "The person is standing with their back to the camera, arms behind their head, and legs spread apart. The form appears to be slightly off, with the legs not being fully extended and the back not being straight. The coach should provide feedback on the form, suggesting that the legs should be fully extended and the back should be straight to improve the overall form."
+    },
+    {
+      "segment_id": "benchmark:0031:002",
+      "temporal_fscore_running": 0.164556962025041,
+      "gt_feedback": "5",
+      "pred_feedback": "The person is standing with their back to the camera, arms behind their head, and legs spread apart. The form appears to be slightly off, with the knees not quite at a 90-degree angle and the arms not fully extended. The correct form should involve knees at a 90-degree angle, with the arms fully extended and the body parallel to the ground. The person should also maintain a balanced stance with the feet shoulder-width apart and the weight distributed evenly on both feet."
+    },
+    {
+      "segment_id": "benchmark:0031:004",
+      "temporal_fscore_running": 0.16459627329164994,
+      "gt_feedback": "That's looking solid! Keep going!",
+      "pred_feedback": "The person is standing on one leg with their back to the camera, and their other leg is bent at the knee. The form appears to be slightly off-balance, with the back leg being higher than the front leg. The critique suggests that the person's form is not perfect, and they should bend their front leg more to maintain balance. If the form is completely flawless, the coach should commend the person's effort and encourage them to keep practicing to improve their form."
+    },
+    {
+      "segment_id": "benchmark:0031:005",
+      "temporal_fscore_running": 0.16589861751124554,
+      "gt_feedback": "You are still going too fast!",
+      "pred_feedback": "The person's back is straight, and their limbs are in a straight position. The form appears to be slightly off, with the person's arms resting on their head and their legs bent at the knees. The specific critique is that the person's form is not perfect, as their back is not straight and their legs are not in a straight position. The coach suggests that the person should keep practicing to improve their form."
+    },
+    {
+      "segment_id": "benchmark:0032:002",
+      "temporal_fscore_running": 0.16393442622923357,
+      "gt_feedback": "Good! But remember to punch it out at the top of the squat!",
+      "pred_feedback": "The person is standing with their back to the camera, arms behind their head, and legs spread apart. The form appears to be slightly off, with the knees not quite at a 90-degree angle and the legs not quite at a 45-degree angle. The correct form should have knees at a 90-degree angle and the legs at a 45-degree angle. The person should also maintain a straight line from the head to the feet while performing the squat."
+    },
+    {
+      "segment_id": "benchmark:0032:003",
+      "temporal_fscore_running": 0.16494845360797342,
+      "gt_feedback": "I wanna see some squat kicks!",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees, indicating a proper squat position."
+    },
+    {
+      "segment_id": "benchmark:0033:001",
+      "temporal_fscore_running": 0.1614730878184237,
+      "gt_feedback": "Come on! Move those arms too!",
+      "pred_feedback": "The person is performing jumping jacks in a gym, with their back and limbs in a straight line. The form appears to be slightly off, with the legs not fully extended and the back not fully straight. The coach should provide feedback on the form, suggesting that the legs should be fully extended and the back should be straight to improve the jumping jack's effectiveness and reduce the risk of injury."
+    },
+    {
+      "segment_id": "benchmark:0039:002",
+      "temporal_fscore_running": 0.15591397849435087,
+      "gt_feedback": "5",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees, indicating a proper squat jump form."
+    },
+    {
+      "segment_id": "benchmark:0039:004",
+      "temporal_fscore_running": 0.15629139072820364,
+      "gt_feedback": "That's it, just a little further.",
+      "pred_feedback": "The person is standing on one leg with the other leg bent at the knee, and the toes are touching the ground. The form appears to be slightly off, with the toes not touching the ground as expected. The coach should provide feedback on the form, suggesting that the toes should be touching the ground, and the person should maintain a more balanced stance."
+    },
+    {
+      "segment_id": "benchmark:0040:000",
+      "temporal_fscore_running": 0.15686274509776538,
+      "gt_feedback": "Just like this.",
+      "pred_feedback": "The person's back is not straight, and their legs are not parallel to the ground. The legs are not at a 90-degree angle, which is a common mistake in air jumps. The correct form should involve straight legs, parallel to the ground, and the person's back should be straight. The person's form is not perfect, as their legs are not at a 90-degree angle. The coach should provide feedback on how to correct this form to improve the air jump rope technique."
+    },
+    {
+      "segment_id": "benchmark:0040:001",
+      "temporal_fscore_running": 0.15844155844128432,
+      "gt_feedback": "Give me a nice straight back on the way down with your elbows back.",
+      "pred_feedback": "The person's back is straight, and their legs are at a 90-degree angle. The form appears to be slightly off, with the legs not at a 90-degree angle. The coach should provide feedback on the form, suggesting that the legs should be at a 90-degree angle for better balance and stability."
+    },
+    {
+      "segment_id": "benchmark:0040:004",
+      "temporal_fscore_running": 0.15756035578117406,
+      "gt_feedback": "Mmhmm",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees. The form appears to be slightly off, with the legs not fully bent. The coach should provide feedback on the form, suggesting that the legs should be bent more and the back should be straight to improve the overall form."
+    },
+    {
+      "segment_id": "benchmark:0040:005",
+      "temporal_fscore_running": 0.15929203539795503,
+      "gt_feedback": "Go on, get down there and hang out. Say hi to your toes.",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees. The form appears to be slightly off, with the toes touching the toes of the toes on the other foot. The coach should provide feedback on the form, suggesting that the toes on the toes on the other foot are not touching the toes on the other foot, which is a common mistake in toe touchers. The coach should emphasize the importance of maintaining proper form to avoid injuries and improve the exercise's effectiveness."
+    },
+    {
+      "segment_id": "benchmark:0041:000",
+      "temporal_fscore_running": 0.1606022584689846,
+      "gt_feedback": "Keep it up.",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees, indicating a proper form for the air jump rope exercise."
+    },
+    {
+      "segment_id": "benchmark:0041:003",
+      "temporal_fscore_running": 0.1604938271602173,
+      "gt_feedback": "Step forward with both toes pointed straight and bend both knees to about 90.",
+      "pred_feedback": "The person is performing a walking lunge exercise, with their back and legs in a straight line. The form appears to be slightly off, with the person's knees not quite at a 90-degree angle and their legs not fully extended. The correct form should involve knees at a 90-degree angle, with the front foot forward and the back foot behind, and the legs fully extended. The person should also maintain a straight back and engage their core muscles during the exercise."
+    },
+    {
+      "segment_id": "benchmark:0041:005",
+      "temporal_fscore_running": 0.16097560975582048,
+      "gt_feedback": "Stretch even further if you can.",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees. The form appears to be slightly off, with the toes touching the toes of the toes on the blue lines. The coach should provide feedback on the form, suggesting that the toes are not touching the toes on the blue lines, and should emphasize the importance of maintaining proper form to avoid injury and maximize the effectiveness of the exercise."
+    },
+    {
+      "segment_id": "benchmark:0043:000",
+      "temporal_fscore_running": 0.1620314389356361,
+      "gt_feedback": "What are you doing?",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees, indicating a proper form for the air jump rope exercise."
+    },
+    {
+      "segment_id": "benchmark:0043:002",
+      "temporal_fscore_running": 0.1622911694507969,
+      "gt_feedback": "There. Keep this going.",
+      "pred_feedback": "The person's back is straight, and their legs are at a 90-degree angle. The form appears to be slightly off, with the legs not being at a 90-degree angle. The coach should provide feedback on the form, suggesting that the legs should be at a 90-degree angle for a more effective kick."
+    },
+    {
+      "segment_id": "benchmark:0043:003",
+      "temporal_fscore_running": 0.1635071090044622,
+      "gt_feedback": "Kick straight out in front of you.",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees, indicating a proper squat position."
+    },
+    {
+      "segment_id": "benchmark:0045:003",
+      "temporal_fscore_running": 0.16129032258036805,
+      "gt_feedback": "2",
+      "pred_feedback": "The person's back is straight, and their limbs are in a straight position. The form appears to be slightly off, with the person's legs slightly bent and their arms extended. The specific critique would be to adjust the position of the back and limbs to achieve a more balanced and efficient plank position."
+    },
+    {
+      "segment_id": "benchmark:0048:000",
+      "temporal_fscore_running": 0.1617312072890162,
+      "gt_feedback": "Keep those wrists loose.",
+      "pred_feedback": "The person is standing with their back to the camera, arms outstretched, and legs apart. The form appears to be slightly off, with the arms not fully extended and the legs not quite apart. The coach should provide feedback on the form, suggesting that the person should keep the form slightly off, with the arms fully extended and the legs apart."
+    },
+    {
+      "segment_id": "benchmark:0048:003",
+      "temporal_fscore_running": 0.16107382550307756,
+      "gt_feedback": "5 reps, keep it up!",
+      "pred_feedback": "The person's back is not straight, and their limbs are not aligned properly. The form is not perfect, and it needs improvement. The specific fix would involve correcting the back alignment and ensuring the limbs are in the correct position during the squat. If the form is completely flawless, the coach should encourage the person to keep practicing and striving for improvement."
+    },
+    {
+      "segment_id": "benchmark:0048:004",
+      "temporal_fscore_running": 0.16222222222194407,
+      "gt_feedback": "Love the commitment! Engage your core and find a fixed point to focus on.",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle on the front of the thigh. The form of the stretch is not perfect, as the person's back is not straight and their limbs are not aligned properly. The critique suggests that the form is not ideal, and the person should adjust their posture and alignment to improve the form. If the form is completely flawless, the coach should commend the individual's effort and encourage them to continue practicing and refining their form."
+    },
+    {
+      "segment_id": "benchmark:0048:005",
+      "temporal_fscore_running": 0.16371681415901343,
+      "gt_feedback": "Good",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle on the front of the thigh. The form appears to be slightly off, with the person's back and limbs not aligned correctly. The critique suggests that the form is not perfect and should be corrected to ensure proper muscle engagement and avoid potential injuries."
+    },
+    {
+      "segment_id": "benchmark:0049:005",
+      "temporal_fscore_running": 0.1600853788684507,
+      "gt_feedback": "That's it. Now, can you feel the pull in your shoulder blade?",
+      "pred_feedback": "The person is performing a deltoid stretch, with their back and limbs in a straight line. The form appears to be slightly off, with the person's hands placed behind their back, which is not ideal for the stretch. The correct form should involve the person's back and limbs in a straight line, with the hands placed in front of the back. The coach should provide feedback on the form, suggesting that the person should adjust their posture to achieve a more effective and safe stretch."
+    },
+    {
+      "segment_id": "benchmark:0050:003",
+      "temporal_fscore_running": 0.1584984358704189,
+      "gt_feedback": "Wrong exercise. Give me a push-up.",
+      "pred_feedback": "The person's back is not straight, and their limbs are not aligned properly. The correct form should involve straightening the back, keeping the elbows close to the body, and engaging the core muscles. The person's form is not perfect, as their back is not straight and their limbs are not aligned properly. The correct form should involve straightening the back, keeping the elbows close to the body, and engaging the core muscles."
+    },
+    {
+      "segment_id": "benchmark:0050:005",
+      "temporal_fscore_running": 0.1592554291620772,
+      "gt_feedback": "Once you're done stretching, hop right back in.",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees. The form appears to be slightly off, with the legs not fully bent. The coach should provide feedback on the form, suggesting that the legs should be bent more and the back should be straight to improve the overall form."
+    },
+    {
+      "segment_id": "benchmark:0051:001",
+      "temporal_fscore_running": 0.1596724667346217,
+      "gt_feedback": "Looks perfect",
+      "pred_feedback": "The person's back is straight, and their limbs are in a balanced position. The form appears to be slightly off, with the legs slightly bent and the arms bent at the elbows. The coach should provide feedback on the form, suggesting that the legs should be straight and the arms should be at the elbows to improve the overall form."
+    },
+    {
+      "segment_id": "benchmark:0051:002",
+      "temporal_fscore_running": 0.1605691056907761,
+      "gt_feedback": "I know you've got more speed in you!",
+      "pred_feedback": "The person's back is straight, and their limbs are in a balanced position. However, the person's form is not perfect, as they are not standing on one foot. The specific critique is that the person is not standing on one foot, which is a crucial aspect of the exercise. The coach should emphasize the importance of maintaining proper form and balance, and encourage the person to work on improving their form to achieve better results."
+    },
+    {
+      "segment_id": "benchmark:0052:000",
+      "temporal_fscore_running": 0.15984015983987754,
+      "gt_feedback": "Try not to lift your knee up. Keep them pointed down and lift only your heels.",
+      "pred_feedback": "The person's back is turned, and they are standing on one leg with the other leg lifted off the ground. The form appears to be slightly off, with the back leg lifted higher than the front leg. The fix would be to ensure that the back leg is lifted at a more horizontal angle and the front leg is lifted at a more vertical angle, aligning the back and front legs more parallel to the ground."
+    },
+    {
+      "segment_id": "benchmark:0053:000",
+      "temporal_fscore_running": 0.15820312499971761,
+      "gt_feedback": "What are you doing? Clock's ticking let's go!",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees, indicating a proper form. The form is good, and the person is maintaining a straight back and knees position."
+    },
+    {
+      "segment_id": "benchmark:0053:004",
+      "temporal_fscore_running": 0.1579961464351696,
+      "gt_feedback": "That's the wrong exercise, we're on deltoid stretches.",
+      "pred_feedback": "The person is standing with their back straight and legs apart, holding a white object in their hands. The form appears to be slightly off, with the person's hands placed too close to their sides. The correct form should have the person's hands placed more distantly from their sides, with the object held at a slight angle. The person should also have their back straight and legs apart, maintaining a balanced and stable posture."
+    },
+    {
+      "segment_id": "benchmark:0054:000",
+      "temporal_fscore_running": 0.1586998087951271,
+      "gt_feedback": "Better but they're out of sync. Try to move them out and in at the same time.",
+      "pred_feedback": "The person's back is arched and their legs are bent at the knees, indicating a proper jumping jack form. However, the person's arms are not fully extended, which is a potential issue. The correct form should involve fully extended arms and legs, with the arms reaching overhead and the legs parallel to the ground. The person's form is not perfect, but it is better than a completely flawless form, as it demonstrates a basic understanding of the correct technique."
+    },
+    {
+      "segment_id": "benchmark:0054:001",
+      "temporal_fscore_running": 0.15984776403396894,
+      "gt_feedback": "That's 5. Keep it up!",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees, indicating a proper form. However, the person's arms are not fully extended, which is a potential issue. The correct form should involve fully extended arms and legs, with the person maintaining a balanced and stable posture."
+    },
+    {
+      "segment_id": "benchmark:0054:003",
+      "temporal_fscore_running": 0.1602262016962282,
+      "gt_feedback": "Better but let's skip the jumping for now and focus on your lunge form. Give me a nice big step and go deep.",
+      "pred_feedback": "The person is in a lunge jump position, with their back straight and legs extended forward. The form appears to be slightly off, with the knees not quite at a 90-degree angle. The coach should provide feedback on the form, suggesting that the knees should be closer to a 90-degree angle for a more effective lunge jump."
+    },
+    {
+      "segment_id": "benchmark:0054:005",
+      "temporal_fscore_running": 0.16029822926346204,
+      "gt_feedback": "Try your other right arm.",
+      "pred_feedback": "The person is performing a deltoid stretch, with their back and limbs in a straight line. The form appears to be slightly off, as the person's back is not fully straight and their limbs are not aligned parallel to each other. The correct form should involve the back being straight and the limbs being parallel to each other. The coach should provide feedback on the form, suggesting that the person should adjust their posture to achieve a more aligned back and limbs."
+    },
+    {
+      "segment_id": "benchmark:0055:002",
+      "temporal_fscore_running": 0.16022099447485397,
+      "gt_feedback": "Make sure you're touching the floor on those floor touches, okay?",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees. The form appears to be slightly off, with the legs not fully bent. The coach should provide feedback on the form, suggesting that the legs should be bent more to improve the overall form."
+    },
+    {
+      "segment_id": "benchmark:0055:005",
+      "temporal_fscore_running": 0.15970961887448867,
+      "gt_feedback": "So close to your toes! Hold this position now.",
+      "pred_feedback": "The person is standing on a white line, and their back is straight, with their legs slightly bent. The form appears to be slightly off, with the toes not touching the line. The coach should provide feedback on the form, suggesting that the toes are not touching the line, and recommend adjustments to improve the form."
+    },
+    {
+      "segment_id": "benchmark:0056:001",
+      "temporal_fscore_running": 0.16007194244575834,
+      "gt_feedback": "That's a little better.",
+      "pred_feedback": "The person's back is straight, and their limbs are in a balanced position. The form appears to be slightly off-balance, with the legs slightly wider than the hips. The coach should provide feedback on the form, suggesting that the person should work on maintaining a more balanced stance and keeping their legs closer to their hips."
+    },
+    {
+      "segment_id": "benchmark:0056:002",
+      "temporal_fscore_running": 0.16129032258036,
+      "gt_feedback": "Next time let's focus on bringing those hips down. You want to be in a classic plank position with your back, hips, and legs in line.",
+      "pred_feedback": "The person's back is in a straight line, and their legs are parallel to the floor. The person is standing on a blue line on the floor, which is likely used to measure the plank taps. The person's form is not perfect, as their back is not in a straight line and their legs are not parallel to the floor. The coach should provide feedback on the form, suggesting that the person's back should be in a straight line and their legs should be parallel to the floor. The coach should also encourage the person to keep practicing and improving their form."
+    },
+    {
+      "segment_id": "benchmark:0056:004",
+      "temporal_fscore_running": 0.16149068322952836,
+      "gt_feedback": "You should feel a nice stretch at the back of your legs.",
+      "pred_feedback": "The person is standing on one leg with the other leg bent at the knee, and the toes are touching the ground. The form appears to be slightly off-balance, with the toes not touching the ground as much as they should. The coach should provide feedback on the form, suggesting that the toes should be touching the ground more evenly and maintaining a straight line between the toes and the ground."
+    },
+    {
+      "segment_id": "benchmark:0056:005",
+      "temporal_fscore_running": 0.16254416961102197,
+      "gt_feedback": "Nice, keep this going.",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees. The form appears to be slightly off, with the legs not fully bent. The coach should provide feedback on the form, suggesting that the legs should be bent more and the back should be straight to improve the overall form."
+    },
+    {
+      "segment_id": "benchmark:0073:002",
+      "temporal_fscore_running": 0.16330114135177798,
+      "gt_feedback": "Keep up that great form!",
+      "pred_feedback": "The person's back is straight, and their left leg is bent at the knee, while their right leg is straight. The form appears to be slightly off-center, with the left leg being slightly higher than the right. The coach should provide feedback on the form, suggesting that the person should bend the left leg slightly more to improve balance and alignment."
+    },
+    {
+      "segment_id": "benchmark:0073:004",
+      "temporal_fscore_running": 0.16333622936548375,
+      "gt_feedback": "Careful not to fall over!",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle in the front of the thigh. The form of the stretch is not perfect, as the person's back is not fully straight and their legs are not fully extended. The critique suggests that the form is not ideal, and the person should focus on keeping their back straight and legs fully extended to improve the form. If the form is completely flawless, the coach should commend the person's effort and encourage them to keep practicing and striving for improvement."
+    },
+    {
+      "segment_id": "benchmark:0074:002",
+      "temporal_fscore_running": 0.16239316239287754,
+      "gt_feedback": "5",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees, indicating a proper squat position."
+    },
+    {
+      "segment_id": "benchmark:0074:003",
+      "temporal_fscore_running": 0.16326530612216417,
+      "gt_feedback": "Yup.",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees. The form appears to be slightly off, with the legs not fully bent. The specific critique is that the person's legs are not fully bent, which may affect their balance and stability. To improve the form, the person should bend their knees more and maintain a straight back."
+    },
+    {
+      "segment_id": "benchmark:0074:004",
+      "temporal_fscore_running": 0.16426756985576924,
+      "gt_feedback": "That's alright, keep trying. Just be careful not to fall over!",
+      "pred_feedback": "The person is performing a quad stretch, which involves stretching the quadriceps muscle on the front of the thigh. The form is slightly off, with the person's back and limbs not aligned correctly. The critique suggests that the form is not perfect and should be corrected to ensure proper muscle engagement and avoid potential injuries. The coach advises the person to keep practicing and refining their form to achieve better results."
+    },
+    {
+      "segment_id": "benchmark:0074:005",
+      "temporal_fscore_running": 0.16512215669727193,
+      "gt_feedback": "Balance can be a challenge with this stretch. Try placing your fingers in your belly button to center yourself.",
+      "pred_feedback": "The person's back is straight, and their legs are bent at the knees, indicating a proper quad stretch. However, the form is not perfect, as the person's back is not fully straight, and their legs are not fully bent. The coach should provide feedback on the form, suggesting that the back should be straight and the legs should be fully bent to achieve a more effective quad stretch."
+    },
+    {
+      "segment_id": "benchmark:0077:001",
+      "temporal_fscore_running": 0.16527545909821245,
+      "gt_feedback": "Let's see if we can get those knees higher.",
+      "pred_feedback": "The person's back is straight, and their limbs are in a straight position. The form appears to be slightly off, with the knees being higher than the toes. The coach should provide feedback on the form, suggesting that the knees should be closer to the toes and the back should be straight."
+    },
+    {
+      "segment_id": "benchmark:0077:002",
+      "temporal_fscore_running": 0.1661129568103462,
+      "gt_feedback": "Better! Keep your chest up as you go down.",
+      "pred_feedback": "The person's back is straight, and their limbs are in a straight position. The form appears to be slightly off, with the person's legs slightly bent and their back not fully straight. The coach should provide feedback on the form, suggesting that the person's legs are not fully straight and that the back should be more straight. The coach should also emphasize the importance of maintaining good form to avoid injuries and improve overall fitness."
+    }
+  ]
+}
